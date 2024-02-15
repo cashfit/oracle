@@ -8,8 +8,6 @@ layout: default
 
 **Last update 2024-2-14, first published 2024-2-13**
 
-This article describes the installation of Oracle Database 19c RAC on Linux (Oracle Linux 9.3 64-bit) using VirtualBox (7.0.12) with no additional shared disk devices.
-
 <details open markdown="block">
   <summary>
     Table of contents
@@ -18,6 +16,8 @@ This article describes the installation of Oracle Database 19c RAC on Linux (Ora
 - TOC
 {:toc}
 </details>
+
+This article describes the installation of Oracle Database 19c RAC on Linux (Oracle Linux 9.3 64-bit) using VirtualBox (7.0.12) with no additional shared disk devices.
 
 ## Introduction
 
@@ -1358,4 +1358,4 @@ For more information see:
 - [Database Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/index.html)
 - [Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox](https://oracle-base.com/articles/12c/oracle-db-12cr2-rac-installation-on-oracle-linux-7-using-virtualbox)
 
-### End
+## End
