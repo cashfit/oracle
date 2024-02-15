@@ -22,5 +22,3 @@ layout: default
 [Oracle8 Release 8.0.6](https://www.oracle.com/database/technologies/oracle8.html){:target="_blank"}   
 [Oracle7 Release 7.3.4](https://www.oracle.com/servers/technologies/oracle7.html){:target="_blank"}  
 
-
-(c) 2015, 2020, 2024 cashfit
