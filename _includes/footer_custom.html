@@ -1,3 +1,24 @@
+<br/>
+<div class="footer-navigation-links">
+  {% if page.previous %}
+
+  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.baseurl }}{{ page.previous.permalink }}">
+    <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+    <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.previous }}</span>
+    <span class="footer-navigation-link__label">{{ page.previous.title }}</span>
+  </a>
+
+  {% endif %} {% if page.next %}
+
+  <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.baseurl }}{{ page.next.permalink }}">
+    <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+    <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.next }}</span>
+    <span class="footer-navigation-link__label">{{ page.next.title }}</span>
+  </a>
+
+  {% endif %}
+</div>
+
 {%- if site.footer_content -%}
   <p class="text-small text-grey-dk-100 mb-0">{{ site.footer_content }}</p>
 {%- endif -%}
