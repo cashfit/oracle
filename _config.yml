@@ -2,7 +2,7 @@ title: Oracle DBA
 description: Oracle database related articles and posts.
 theme: just-the-docs
 
-#logo: "/assets/images/database-settings-svgrepo-com.svg"
+logo: "/assets/images/database-settings-svgrepo-com.svg"
 
 favicon_ico: "/assets/images/favicon.ico"
 
@@ -66,5 +66,4 @@ callouts:
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
-  - jekyll-last-modified-at
   
