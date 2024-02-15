@@ -2,6 +2,10 @@ title: Oracle DBA
 description: Oracle database related articles and posts.
 theme: just-the-docs
 
+logo: "/assets/images/icons8-database-administrator-50.png"
+
+favicon_ico: "/assets/images/icons8-database-administrator-16.png"
+
 url: https://cashfit.github.io/oracle/
 
 # Aux links for the upper right navigation
