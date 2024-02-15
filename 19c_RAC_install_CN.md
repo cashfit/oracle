@@ -1,3 +1,8 @@
+---
+title: 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
+layout: default
+---
+
 # 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
 
 **最新更新为2019-11-20，发布于2020-5-4**
