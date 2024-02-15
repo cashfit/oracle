@@ -4,7 +4,7 @@ layout: default
 ---
 
 # 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
-
+{: .no_toc }
 **最新更新为2019-11-20，发布于2020-5-4**
 
 <details open markdown="block">
