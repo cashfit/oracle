@@ -69,7 +69,7 @@ callouts:
     color: red
 
 paginate: 1
-
+paginate_path: "/docs/page:num/"
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
