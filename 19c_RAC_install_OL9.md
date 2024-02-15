@@ -141,7 +141,7 @@ If you plan to use the "oracle-database-preinstall-19c" package to perform all y
 # yum localinstall -y oracle-database-preinstall-19c-1.0-1.el9.x86_64.rpm
 ```
 
-> ⚠️ **Warning**   
+{: .warning }   
 > - You may need download the rpm package from [Oracle public YUM server](https://yum.oracle.com/repo/OracleLinux/OL9/appstream/x86_64/getPackage/oracle-database-preinstall-19c-1.0-1.el9.x86_64.rpm) before install it manually.   
 > - If you didn't check the "Allow root SSH login with password" flag while setting the root password during installation of Oracle Linux 9, then you can enable it by edit the /etc/ssh/sshd_config file and set the PermitRootLogin to yes. Remember restarting the sshd service to make it effect.
 
@@ -910,7 +910,7 @@ exit
 ```
 If you were planning on using the AFD Driver (the new ASMLib) you would configure the shared disks using the asmcmd command as shown below. We are using UDEV, so this is not necessary.
 
-> ⚠️ **Warning**   
+{: .warning }  
 > 2024-2-14, at the moment of writing this article, ASMLib and AFD are not fully support Oracle Linux 9 kernel UEK 7.x, please do not use the feature.   
 > If you insist using ASMLib and AFD, additional database patch is needed.
 
@@ -964,7 +964,7 @@ On the "Cluster Node Information" screen, click the "Add" button.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184312@2x.jpg> "Install the Grid Infrastructure")
 Click "Test" button to test it once it is complete. Once the test is complete, click the "Next" button.
 
-> ⚠️ **Warning**   
+{: .warning }   
 > the ssh equivalence setup will fail on this screen, please use manual method mentioned above, and just test it.
  
 Check the public and private networks are specified correctly. Make sure enp0s8 are used for "Public", enp0s9 are used for "ASM & Private", If the NAT interface is displayed, remember to mark it as "Do Not Use". Click the "Next" button.
