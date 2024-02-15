@@ -2,8 +2,6 @@
 title: DBA website
 layout: default
 nav_order: 1.2
-previous: /docs/oradocs
-next: /docs/19c_RAC_install
 ---
 
 # DBA website
