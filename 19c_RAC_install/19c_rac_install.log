@@ -1,0 +1,528 @@
+[eric@ol7-19c-rac1 ~]$ su - 
+Password: 
+Last login: Tue Nov 19 05:38:25 EST 2019 on pts/0
+[root@ol7-19c-rac1 ~]# /u01/app/oraInventory/orainstRoot.sh 
+Changing permissions of /u01/app/oraInventory.
+Adding read,write permissions for group.
+Removing read,write,execute permissions for world.
+
+Changing groupname of /u01/app/oraInventory to oinstall.
+The execution of the script is complete.
+[root@ol7-19c-rac1 ~]# su - oracle
+Last login: Tue Nov 19 05:37:51 EST 2019 on :0
+[oracle@ol7-19c-rac1 ~]$ ssh ol7-19c-rac2
+Last login: Tue Nov 19 05:05:03 2019
+[oracle@ol7-19c-rac2 ~]$ su - 
+Password: 
+Last login: Tue Nov 19 05:05:01 EST 2019 on pts/0
+/[root@ol7-19c-rac2 ~]# /u01/app/oraInventory/orainstRoot.sh 
+Changing permissions of /u01/app/oraInventory.
+Adding read,write permissions for group.
+Removing read,write,execute permissions for world.
+
+Changing groupname of /u01/app/oraInventory to oinstall.
+The execution of the script is complete.
+[root@ol7-19c-rac2 ~]# exit
+logout
+[oracle@ol7-19c-rac2 ~]$ exit
+logout
+Connection to ol7-19c-rac2 closed.
+[oracle@ol7-19c-rac1 ~]$ exit
+logout
+[root@ol7-19c-rac1 ~]# /u01/app/19.0.0/grid/root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= oracle
+    ORACLE_HOME=  /u01/app/19.0.0/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+   Copying dbhome to /usr/local/bin ...
+   Copying oraenv to /usr/local/bin ...
+   Copying coraenv to /usr/local/bin ...
+
+
+Creating /etc/oratab file...
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/ol7-19c-rac1/crsconfig/rootcrs_ol7-19c-rac1_2019-11-19_06-10-11AM.log
+2019/11/19 06:10:25 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
+2019/11/19 06:10:25 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
+2019/11/19 06:10:25 CLSRSC-363: User ignored prerequisites during installation
+2019/11/19 06:10:25 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
+2019/11/19 06:10:27 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
+2019/11/19 06:10:29 CLSRSC-594: Executing installation step 5 of 19: 'SetupOSD'.
+2019/11/19 06:10:29 CLSRSC-594: Executing installation step 6 of 19: 'CheckCRSConfig'.
+2019/11/19 06:10:30 CLSRSC-594: Executing installation step 7 of 19: 'SetupLocalGPNP'.
+2019/11/19 06:11:14 CLSRSC-594: Executing installation step 8 of 19: 'CreateRootCert'.
+2019/11/19 06:11:22 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
+2019/11/19 06:11:31 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+2019/11/19 06:11:46 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
+2019/11/19 06:11:46 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
+2019/11/19 06:11:55 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
+2019/11/19 06:11:55 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2019/11/19 06:12:20 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2019/11/19 06:12:29 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2019/11/19 06:12:37 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2019/11/19 06:12:45 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+
+ASM has been created and started successfully.
+
+[DBT-30001] Disk groups created successfully. Check /u01/app/oracle/cfgtoollogs/asmca/asmca-191119AM061319.log for details.
+
+2019/11/19 06:14:25 CLSRSC-482: Running command: '/u01/app/19.0.0/grid/bin/ocrconfig -upgrade oracle oinstall'
+CRS-4256: Updating the profile
+Successful addition of voting disk 82896a1404774fa1bf7404bea502e526.
+Successfully replaced voting disk group with +DATA.
+CRS-4256: Updating the profile
+CRS-4266: Voting file(s) successfully replaced
+##  STATE    File Universal Id                File Name Disk group
+--  -----    -----------------                --------- ---------
+ 1. ONLINE   82896a1404774fa1bf7404bea502e526 (/dev/sdb1) [DATA]
+Located 1 voting disk(s).
+2019/11/19 06:16:33 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+2019/11/19 06:18:09 CLSRSC-343: Successfully started Oracle Clusterware stack
+2019/11/19 06:18:09 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2019/11/19 06:22:17 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2019/11/19 06:23:13 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+[root@ol7-19c-rac1 ~]# su - oracle
+Last login: Tue Nov 19 06:23:11 EST 2019 on pts/1
+ss[oracle@ol7-19c-rac1 ~]$ ssh ol7-19c-rac2
+Last login: Tue Nov 19 06:09:27 2019 from ol7-19c-rac1
+[oracle@ol7-19c-rac2 ~]$ su - 
+Password: 
+Last login: Tue Nov 19 06:09:30 EST 2019 on pts/1
+[root@ol7-19c-rac2 ~]# /u01/app/19.0.0/grid/root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= oracle
+    ORACLE_HOME=  /u01/app/19.0.0/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+   Copying dbhome to /usr/local/bin ...
+   Copying oraenv to /usr/local/bin ...
+   Copying coraenv to /usr/local/bin ...
+
+
+Creating /etc/oratab file...
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/ol7-19c-rac2/crsconfig/rootcrs_ol7-19c-rac2_2019-11-19_06-24-56AM.log
+2019/11/19 06:25:07 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
+2019/11/19 06:25:07 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
+2019/11/19 06:25:07 CLSRSC-363: User ignored prerequisites during installation
+2019/11/19 06:25:07 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
+2019/11/19 06:25:09 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
+2019/11/19 06:25:10 CLSRSC-594: Executing installation step 5 of 19: 'SetupOSD'.
+2019/11/19 06:25:10 CLSRSC-594: Executing installation step 6 of 19: 'CheckCRSConfig'.
+2019/11/19 06:25:11 CLSRSC-594: Executing installation step 7 of 19: 'SetupLocalGPNP'.
+2019/11/19 06:25:14 CLSRSC-594: Executing installation step 8 of 19: 'CreateRootCert'.
+2019/11/19 06:25:14 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
+2019/11/19 06:25:33 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
+2019/11/19 06:25:34 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
+2019/11/19 06:25:48 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
+2019/11/19 06:25:51 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2019/11/19 06:26:36 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+2019/11/19 06:26:41 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2019/11/19 06:26:44 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2019/11/19 06:26:48 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2019/11/19 06:26:52 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+2019/11/19 06:27:12 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+2019/11/19 06:28:23 CLSRSC-343: Successfully started Oracle Clusterware stack
+2019/11/19 06:28:23 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2019/11/19 06:29:24 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2019/11/19 06:29:56 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+[root@ol7-19c-rac2 ~]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.chad
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.net1.network
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.ons
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             Started,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Started,STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.cvu
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac2.vip
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+--------------------------------------------------------------------------------
+[root@ol7-19c-rac2 ~]# exit
+logout
+[oracle@ol7-19c-rac2 ~]$ exit
+logout
+Connection to ol7-19c-rac2 closed.
+[oracle@ol7-19c-rac1 ~]$ exit
+logout
+[root@ol7-19c-rac1 ~]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.chad
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.net1.network
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.ons
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             Started,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Started,STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.cvu
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac2.vip
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+--------------------------------------------------------------------------------
+[root@ol7-19c-rac1 ~]# 
+
+[oracle@ol7-19c-rac1 cdbrac]$ grid_env
+[oracle@ol7-19c-rac1 cdbrac]$ crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.chad
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.net1.network
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.ons
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             Started,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Started,STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.cdbrac.db
+      1        ONLINE  ONLINE       ol7-19c-rac1             Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+ora.cvu
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac2.vip
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+--------------------------------------------------------------------------------
+[oracle@ol7-19c-rac1 cdbrac]$ 
+[oracle@ol7-19c-rac1 cdbrac]$ ssh ol7-19c-rac2
+Last login: Tue Nov 19 10:35:08 2019
+[oracle@ol7-19c-rac2 ~]$ grid_env
+[oracle@ol7-19c-rac2 ~]$ crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.chad
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.net1.network
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.ons
+               ONLINE  ONLINE       ol7-19c-rac1             STABLE
+               ONLINE  ONLINE       ol7-19c-rac2             STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             Started,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Started,STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+      3        OFFLINE OFFLINE                               STABLE
+ora.cdbrac.db
+      1        ONLINE  ONLINE       ol7-19c-rac1             Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+      2        ONLINE  ONLINE       ol7-19c-rac2             Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+ora.cvu
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.ol7-19c-rac2.vip
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       ol7-19c-rac1             STABLE
+--------------------------------------------------------------------------------
+[oracle@ol7-19c-rac2 ~]$ 
+[oracle@ol7-19c-rac2 ~]$ crsctl stat res -t -init
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.asm
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.cluster_interconnect.haip
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.crf
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.crsd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.cssd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.cssdmonitor
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.ctssd
+      1        ONLINE  ONLINE       ol7-19c-rac2             OBSERVER,STABLE
+ora.diskmon
+      1        OFFLINE OFFLINE                               STABLE
+ora.evmd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.gipcd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.gpnpd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.mdnsd
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+ora.storage
+      1        ONLINE  ONLINE       ol7-19c-rac2             STABLE
+--------------------------------------------------------------------------------
+[oracle@ol7-19c-rac2 ~]$ 
+
+
+[oracle@ol7-19c-rac1 cdbrac]$ grid_env
+[oracle@ol7-19c-rac1 cdbrac]$ srvctl config database -d cdbrac
+Database unique name: cdbrac
+Database name: cdbrac
+Oracle home: /u01/app/oracle/product/19.0.0/db_1
+Oracle user: oracle
+Spfile: +DATA/CDBRAC/PARAMETERFILE/spfile.275.1024741213
+Password file: +DATA/CDBRAC/PASSWORD/pwdcdbrac.258.1024730137
+Domain: 
+Start options: open
+Stop options: immediate
+Database role: PRIMARY
+Management policy: AUTOMATIC
+Server pools: 
+Disk Groups: DATA
+Mount point paths: 
+Services: 
+Type: RAC
+Start concurrency: 
+Stop concurrency: 
+OSDBA group: dba
+OSOPER group: 
+Database instances: cdbrac1,cdbrac2
+Configured nodes: ol7-19c-rac1,ol7-19c-rac2
+CSS critical: no
+CPU count: 0
+Memory target: 0
+Maximum memory: 0
+Default network number for database services: 
+Database is administrator managed
+[oracle@ol7-19c-rac1 cdbrac]$ srvctl status database -d cdbrac
+Instance cdbrac1 is running on node ol7-19c-rac1
+Instance cdbrac2 is running on node ol7-19c-rac2
+[oracle@ol7-19c-rac1 cdbrac]$ 
+
+[oracle@ol7-19c-rac1 cdbrac]$ db_env
+[oracle@ol7-19c-rac1 cdbrac]$ sqlplus / as sysdba
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Tue Nov 19 10:34:25 2019
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> SELECT inst_name FROM v$active_instances;
+
+INST_NAME
+--------------------------------------------------------------------------------
+ol7-19c-rac1:cdbrac1
+ol7-19c-rac2:cdbrac2
+
+SQL> set lin 200 pages 200
+SQL> select * from cdb_pdbs;
+
+    PDB_ID PDB_NAME                                                                                    DBID     CON_UID GUID
+---------- -------------------------------------------------------------------------------------------------------------------------------- ---------- ---------- --------------------------------
+STATUS     CREATION_SCN        VSN LOGGING   FORCE_LOGGING                           FOR APP APP APP APPLICATION_ROOT_CON_ID IS_     CON_ID UPGRADE_PRIORITY APP FOREIGN_CDB_DBID UNPLUG_SCN
+---------- ------------ ---------- --------- --------------------------------------- --- --- --- --- ----------------------- --- ---------- ---------------- --- ---------------- ----------
+FOREIGN_PDB_ID CREATION_ REFRES REFRESH_INTERVAL TEM LAST_REFRESH_SCN
+-------------- --------- ------ ---------------- --- ----------------
+TENANT_ID
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SNAPSH SNAPSHOT_INTERVAL
+------ -----------------
+CREDENTIAL_NAME
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         2 PDB$SEED                                                                                       278299009   278299009 97B3161DB70F20D2E0536538A8C0A4D8
+NORMAL              303  318767104 LOGGING   NO                                      NO  NO  NO  NO       NO    2                1 NO                 0
+             0 19-NOV-19 NONE                    NO
+
+MANUAL
+
+
+         3 PDB                                                                                            637571156   637571156 97B5B6C1B8D00D70E0536538A8C061C4
+NORMAL          1712776  318767104 LOGGING   NO                                      NO  NO  NO  NO       NO    3                  NO         510326767    1712233
+             2 19-NOV-19 NONE                    NO
+
+MANUAL
+
+
+
+SQL> select * from v$containers;
+
+    CON_ID       DBID    CON_UID GUID                             NAME
+---------- ---------- ---------- -------------------------------- --------------------------------------------------------------------------------------------------------------------------------
+OPEN_MODE  RES OPEN_TIME                                                                   CREATE_SCN TOTAL_SIZE BLOCK_SIZE RECOVERY SNAPSHOT_PARENT_CON_ID APP APP APP APPLICATION_ROOT_CON_ID APP PRO
+---------- --- --------------------------------------------------------------------------- ---------- ---------- ---------- -------- ---------------------- --- --- --- ----------------------- --- ---
+LOCAL_UNDO   UNDO_SCN UNDO_TIME CREATION_  PDB_COUNT AUDIT_FILES_SIZE   MAX_SIZE MAX_DIAGNOSTICS_SIZE MAX_AUDIT_SIZE LAST_CHANGE MEM
+---------- ---------- --------- --------- ---------- ---------------- ---------- -------------------- -------------- ----------- ---
+TENANT_ID
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UPGRADE_LEVEL GUID_BASE64
+------------- ------------------------------
+         1  510326767          1 97B3161DB70E20D2E0536538A8C0A4D8 CDB$ROOT
+READ WRITE NO  19-NOV-19 10.23.44.881 AM -05:00                                                     0       0       8192 ENABLED                          NO  NO  NO                          NO  NO
+         0          0           19-NOV-19          1                0          0                    0   0 COMMON USER NO
+
+            1 l7MWHbcOINLgU2U4qMCk2AA=
+
+         2  278299009  278299009 97B3161DB70F20D2E0536538A8C0A4D8 PDB$SEED
+READ ONLY  NO  19-NOV-19 10.23.45.800 AM -05:00                                                   303  842006528       8192 ENABLED                       NO  NO  NO                          NO  NO
+         1          0           19-NOV-19          0                0          0                    0   0 COMMON USER NO
+
+            1 l7MWHbcPINLgU2U4qMCk2AA=
+
+         3  637571156  637571156 97B5B6C1B8D00D70E0536538A8C061C4 PDB
+READ WRITE NO  19-NOV-19 10.32.03.913 AM -05:00                                               1712776 1067450368       8192 ENABLED                       NO  NO  NO                          NO  NO
+         1        303           19-NOV-19          0                0          0                    0   0 COMMON USER NO
+
+            1 l7W2wbjQDXDgU2U4qMBhxAA=
+
+
+SQL> 
+
