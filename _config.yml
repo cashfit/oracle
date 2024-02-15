@@ -68,6 +68,8 @@ callouts:
     title: Warning
     color: red
 
+paginate: 1
+
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
