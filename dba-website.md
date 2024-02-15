@@ -47,4 +47,3 @@ Other Website
 | <http://tech.e2sn.com/oracle/troubleshooting/oradebug-doc>{:target="_blank"}           | oradebug   |
 | <http://www.orafaq.com/>{:target="_blank"}                                             | Oracle FAQ  |
 
-(c) cashfit
