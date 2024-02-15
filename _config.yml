@@ -59,3 +59,5 @@ callouts:
     title: Warning
     color: red
 
+plugins:
+  - jekyll-seo-tag
