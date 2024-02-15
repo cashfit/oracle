@@ -866,7 +866,7 @@ Prior to 11gR2 we would probably use the "runcluvfy.sh" utility in the clusterwa
 /mountpoint/clusterware/runcluvfy.sh stage -pre crsinst -n ol9-19c-rac1,ol9-19c-rac2 -verbose
 ```
 
-> ⚠️ **Warning**   
+{: .warning }    
 > The SSH equivalence during the OUI installer will fail for unsupported SSH key format. OpenSSH v7.8 and higher generates RSA private keys by default in the OpenSSH format, instead of the previous default PEM format. The OpenSSH key format offers substantially better protection against offline password guessing and supports key comments in private keys.
 > Manually setup SSH passwordless is necessary for a successfully installation, with ssh-keygen -m pem option.
 
