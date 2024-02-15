@@ -16,6 +16,8 @@ layout: default
 {:toc}
 </details>
 
+---
+
 本文介绍了使用VirtualBox（6.0.10）在Linux（Oracle Linux 7.7 64位）上安装Oracle Database 19c RAC，而没有其他共享磁盘设备的情况。
 
 ## 介绍
@@ -1238,5 +1240,5 @@ SQL>
 - [Database Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/index.html)
 - [Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox](https://oracle-base.com/articles/12c/oracle-db-12cr2-rac-installation-on-oracle-linux-7-using-virtualbox)
 
-### 结束
+## 结束
 
