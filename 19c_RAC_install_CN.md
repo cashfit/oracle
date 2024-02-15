@@ -7,6 +7,15 @@ layout: default
 
 **最新更新为2019-11-20，发布于2020-5-4**
 
+<details open markdown="block">
+  <summary>
+    目录
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
 本文介绍了使用VirtualBox（6.0.10）在Linux（Oracle Linux 7.7 64位）上安装Oracle Database 19c RAC，而没有其他共享磁盘设备的情况。
 
 ## 介绍
