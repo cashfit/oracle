@@ -4,7 +4,7 @@ layout: default
 ---
 
 # Oracle Database 19c RAC On Oracle Linux 7 Using VirtualBox
-
+{: .no_toc }
 **Last update 2019-11-20, published on 2020-5-3**
 
 <details open markdown="block">
