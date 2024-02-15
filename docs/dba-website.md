@@ -2,8 +2,8 @@
 title: DBA website
 layout: default
 nav_order: 1.2
-previous: /imke/02-managing-projects/
-next: /optimist/faq/
+previous: ./oradocs
+next: ./19c_RAC_install
 ---
 
 # DBA website
