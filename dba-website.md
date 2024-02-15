@@ -1,5 +1,8 @@
-DBA website
-===========
+---
+title: DBA website
+layout: default
+---
+
 
 Offical Blogs
 -----
