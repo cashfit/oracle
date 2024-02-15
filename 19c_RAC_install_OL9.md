@@ -1,3 +1,9 @@
+---
+title: Oracle Database 19c RAC On Oracle Linux 9 Using VirtualBox
+layout: default
+---
+
+
 # Oracle Database 19c RAC On Oracle Linux 9 Using VirtualBox
 
 **Last update 2024-2-14, first published 2024-2-13**
