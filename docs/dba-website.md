@@ -2,6 +2,8 @@
 title: DBA website
 layout: default
 nav_order: 1.2
+previous: /imke/02-managing-projects/
+next: /optimist/faq/
 ---
 
 # DBA website
