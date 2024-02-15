@@ -2,7 +2,7 @@
 <div class="footer-navigation-links">
   {% if page.previous %}
 
-  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.baseurl }}{{ page.previous.permalink }}">
+  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.baseurl }}{{ page.previous.url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.previous }}</span>
     <span class="footer-navigation-link__label">{{ page.previous.title }}</span>
@@ -10,7 +10,7 @@
 
   {% endif %} {% if page.next %}
 
-  <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.baseurl }}{{ page.next.permalink }}">
+  <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.baseurl }}{{ page.next.url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.next }}</span>
     <span class="footer-navigation-link__label">{{ page.next.title }}</span>
