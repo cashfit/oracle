@@ -71,4 +71,5 @@ callouts:
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-postfiles
   
