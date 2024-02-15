@@ -1,7 +1,7 @@
 ---
 title: 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
 layout: default
-nav_order: 2.1
+nav_order: 12
 ---
 
 # 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
