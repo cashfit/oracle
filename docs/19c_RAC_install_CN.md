@@ -6,7 +6,7 @@ nav_order: 12
 
 # 使用VirtualBox在Oracle Linux 7上安装Oracle Database 19c RAC
 {: .no_toc }
-**最新更新为2019-11-20，发布于2020-5-4**
+**创建时间：2019-11-20，更新时间：2020-5-4**
 
 <details open markdown="block">
   <summary>
@@ -1241,5 +1241,5 @@ SQL>
 - [Database Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/index.html)
 - [Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox](https://oracle-base.com/articles/12c/oracle-db-12cr2-rac-installation-on-oracle-linux-7-using-virtualbox)
 
-## 结束
+结束。
 
