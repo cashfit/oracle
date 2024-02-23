@@ -2,6 +2,7 @@
 title: Oracle Database Documentation
 layout: default
 nav_order: 2
+last_modified_date: 2024-2-20 +0800
 ---
 
 # [Oracle Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/index.html){:target="_blank"}  
