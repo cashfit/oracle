@@ -7,7 +7,7 @@ nav_order: 13
 
 # Oracle Database 19c RAC On Oracle Linux 9 Using VirtualBox
 {: .no_toc }
-**Last update 2024-2-14, first published 2024-2-13**
+**Created: 2024-2-13, Updated: 2024-2-14**
 
 <details open markdown="block">
   <summary>
@@ -1361,4 +1361,5 @@ For more information see:
 - [Database Installation Guide for Linux](https://docs.oracle.com/en/database/oracle/oracle-database/19/ladbi/index.html)
 - [Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox](https://oracle-base.com/articles/12c/oracle-db-12cr2-rac-installation-on-oracle-linux-7-using-virtualbox)
 
-## End
+End.
+
