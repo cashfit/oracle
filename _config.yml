@@ -29,7 +29,7 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "&copy; cashfit"
+footer_content: "&copy; cashfit Powered by {{ site.theme }}."
 
 # Footer
 footer_navigation:
