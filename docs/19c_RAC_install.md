@@ -1,6 +1,7 @@
 ---
 title: Oracle Database 19c RAC On Oracle Linux 7 Using VirtualBox
 layout: default
+published: true
 nav_order: 11
 ---
 
