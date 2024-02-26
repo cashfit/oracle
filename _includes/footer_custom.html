@@ -5,44 +5,52 @@
     {% assign prevIndex = currIndex | minus: 1 %}
     {% assign nextIndex = currIndex | plus: 1 %}
     {% assign articleIndexLength = forloop.length | minus: 1 %}
-    
-      {% if currIndex == 0 %}
-        {% assign page.previous.url = null %} 
+ <div class="footer-navigation-links">   
+ 
+   {% if currIndex == 0 %}
+        {% assign page.previous.url = nil %} 
         {% assign page.next.url = articles[nextIndex].url %}
         {% assign page.next.title = articles[nextIndex].title %}
+
+   <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.url }}{{ page.next.url }}">
+    <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+    <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.next }}</span>
+    <span class="footer-navigation-link__label">{{ page.next.title }}</span>
+  </a>
+  
+   
       {% elsif currIndex < articleIndexLength and currIndex != 0 %}
         {% assign page.previous.url = articles[prevIndex].url %} 
         {% assign page.previous.title = articles[prevIndex].title %}
         {% assign page.next.url = articles[nextIndex].url %}
         {% assign page.next.title = articles[nextIndex].title %}
-      {% elsif currIndex == articleIndexLength %}
-        {% assign page.next.url = null %} 
-        {% assign page.previous.url = articles[prevIndex].url %}
-        {% assign page.previous.title = articles[prevIndex].title %}
-      {% endif %}
-    </div>
-  {% endif %}
-{% endfor %}
-
-
-<div class="footer-navigation-links">
-  {%- if page.previous.url -%}
 
   <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.url }}{{ page.previous.url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.previous }}</span>
     <span class="footer-navigation-link__label">{{ page.previous.title }}</span>
   </a>
-
-  {%- endif -%} {%- if page.next.url -%}
-
   <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.url }}{{ page.next.url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.next }}</span>
     <span class="footer-navigation-link__label">{{ page.next.title }}</span>
   </a>
+        
+      {% elsif currIndex == articleIndexLength %}
+        {% assign page.next.url = nil %} 
+        {% assign page.previous.url = articles[prevIndex].url %}
+        {% assign page.previous.title = articles[prevIndex].title %}
+  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.url }}{{ page.previous.url }}">
+    <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+    <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.previous }}</span>
+    <span class="footer-navigation-link__label">{{ page.previous.title }}</span>
+  </a>
+        
+      {% endif %}
+        </div>
+  {% endif %}
+{% endfor %}
 
-  {%- endif -%}
-</div>
+
 {{ page.next.title }}
   <p class="text-small text-grey-dk-100 mb-0">&copy; cashfit. Powered by <a href="https://github.com/just-the-docs/just-the-docs">{{ site.theme }}</a></p>
