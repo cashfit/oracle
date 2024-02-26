@@ -1,4 +1,4 @@
-{% assign articles = site.posts %}
+{% assign articles = site.pages %}
 {% for article in articles %}
   {% if article.title == page.title %}
     {% assign currIndex = forloop.index0 %}
