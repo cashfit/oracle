@@ -1,5 +1,5 @@
 
-{% assign articles = site.pages %}
+{% assign articles = site.pages | sort: 'nav_order' | where: 'published', true %}
 {% for article in articles %}
   {% if article.title == page.title %}
     {% assign currIndex = forloop.index0 %}
