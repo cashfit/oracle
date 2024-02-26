@@ -13,7 +13,7 @@ https://stackoverflow.com/questions/31013878/navigation-for-pages-not-for-posts-
  
    {% if forloop.first == false %}
      {% assign prevIndex = currIndex | minus: 1 %}
-  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.url }} {{ articles[prevIndex].url }}">
+  <a class="footer-navigation-link footer-navigation-link--previous" href="{{ site.url }}{{ articles[prevIndex].url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.previous }}</span>
     <span class="footer-navigation-link__label">{{ articles[prevIndex].title }}</span>
@@ -22,7 +22,7 @@ https://stackoverflow.com/questions/31013878/navigation-for-pages-not-for-posts-
   {% if forloop.last == false %}
      {% assign nextIndex = currIndex | plus: 1 %}
       
-   <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.url }} {{ articles[nextIndex].url }}">
+   <a class="footer-navigation-link footer-navigation-link--next" href="{{ site.url }}{{ articles[nextIndex].url }}">
     <svg class="footer-navigation-link__icon" viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
     <span class="footer-navigation-link__sublabel">{{ site.footer_navigation.next }}</span>
     <span class="footer-navigation-link__label">{{ articles[nextIndex].title }}</span>
