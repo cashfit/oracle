@@ -29,18 +29,6 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
-# Build
-exclude:
-  [
-    "node_modules/",
-    "Gemfile",
-    "Gemfile.lock",
-    "package-lock.json",
-    "LICENSE.txt",
-    "404.html",
-    "README.md",
-    "just-the-docs-dark.css",
-  ]
 
 # Footer
 footer_navigation:
