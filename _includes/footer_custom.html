@@ -1,3 +1,29 @@
+{% assign articles = site.posts %}
+{% for article in articles %}
+  {% if article.title == page.title %}
+    {% assign currIndex = forloop.index0 %}
+    {% assign prevIndex = currIndex | minus: 1 %}
+    {% assign nextIndex = currIndex | plus: 1 %}
+    {% assign articleIndexLength = forloop.length | minus: 1 %}
+    
+      {% if currIndex == 0 %}
+        {% assign page.previous.url = null %} 
+        {% assign page.next.url = articles[nextIndex].url %}
+        {% assign page.next.title = articles[nextIndex].title %}
+      {% elsif currIndex < articleIndexLength and currIndex != 0 %}
+        {% assign page.previous.url = articles[prevIndex].url %} 
+        {% assign page.previous.title = articles[prevIndex].title %}
+        {% assign page.next.url = articles[nextIndex].url %}
+        {% assign page.next.title = articles[nextIndex].title %}
+      {% elsif currIndex == articleIndexLength %}
+        {% assign page.next.url = null %} 
+        {% assign page.previous.url = articles[prevIndex].url %}
+        {% assign page.previous.title = articles[prevIndex].title %}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endfor %}
+
 
 <div class="footer-navigation-links">
   {%- if page.previous.url -%}
