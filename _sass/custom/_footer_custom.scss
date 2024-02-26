@@ -23,7 +23,7 @@
 }
 
 .footer-navigation-link--previous {
-  text-align: left;
+  text-align: right;
   .footer-navigation-link__icon {
     left: $sp-5;
     transform: rotateY(180deg);
@@ -32,7 +32,7 @@
 
 .footer-navigation-link--next {
   margin-left: auto; // Always push to right, even if previous link does not exist
-  text-align: right;
+  text-align: left;
 
   .footer-navigation-link__icon {
     right: $sp-5;
