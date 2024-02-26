@@ -39,7 +39,7 @@ exclude:
     "LICENSE.txt",
     "404.html",
     "README.md",
-    "*css",
+    "just-the-docs-dark.css",
   ]
 
 # Footer
