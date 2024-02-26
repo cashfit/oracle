@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/31013878/navigation-for-pages-not-for-posts-in-jekyll
+
 
 {% assign articles = site.pages | sort: 'nav_order' | where: 'published', true %}
 {% for article in articles %}
