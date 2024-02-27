@@ -10,8 +10,6 @@ url: https://cashfit.github.io/oracle
 
 # Aux links for the upper right navigation
 aux_links:
-  "":
-    - "<svg width='18px' height='18px'><use href="#svg-sun"></use></svg>"
   "View on GitHub":
     - "https://github.com/cashfit/oracle"
 
