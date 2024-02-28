@@ -73,5 +73,6 @@ callouts:
 plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-sitemap
 
 ga_tracking: G-XM85C4GBDV
