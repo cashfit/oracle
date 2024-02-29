@@ -10,7 +10,7 @@ last_modified_date: 2024-2-29 08:26:12 +0800
 
 Oracle database related articles and posts.
 
-# [Software release and support status](https://endoflife.date/)
+## [Software release and support status](https://endoflife.date/){:target="_blank"}
 
 Programming           | [Python](https://endoflife.date/python){:target="_blank"} | [Ruby](https://endoflife.date/ruby){:target="_blank"} | [Java](https://endoflife.date/java){:target="_blank"} 
 Database              | [PostgreSQL](https://endoflife.date/postgresql){:target="_blank"} | [MySQL](https://endoflife.date/mysql){:target="_blank"} | [Redis](https://endoflife.date/redis){:target="_blank"} 
