@@ -8,6 +8,8 @@ published: true
 last_modified_date: 2024-2-29 08:26:12 +0800
 ---
 
+![Data](</oracle/assets/images/Data analysis-pana.svg> "Hero")
+
 Oracle database related articles and posts.
 
 ## [Software release and support status](https://endoflife.date/){:target="_blank"}
