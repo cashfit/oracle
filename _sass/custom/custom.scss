@@ -1,18 +1,18 @@
 @import "./footer_custom";
 
 // Inject site logo before the site title
-.site-title {
-  margin-left: 2rem;
+//.site-title {
+//  margin-left: 2rem;
 
-  &:before {
-    content: '';
-    background:url('/oracle/assets/images/database-settings-svgrepo-com.svg');
-    background-size:cover;
-    position:absolute;
-    width: 2rem;
-    height: 2rem;
-    margin-left: -2.1rem;
-    margin-bottom: -.3rem;
-  }
-}
+//  &:before {
+//    content: '';
+//    background:url('/oracle/assets/images/database-settings-svgrepo-com.svg');
+//    background-size:cover;
+//    position:absolute;
+//    width: 2rem;
+//    height: 2rem;
+//    margin-left: -2.1rem;
+//    margin-bottom: -.3rem;
+//  }
+//}
 
