@@ -74,5 +74,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
   - jekyll-sitemap
+  - jekyll-loading-lazy
 
 ga_tracking: G-XM85C4GBDV
