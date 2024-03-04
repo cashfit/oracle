@@ -1208,13 +1208,19 @@ $ zip PostGrid.zip *.vdi
 ## Install the Database Software
 Make sure the "ol9-19c-rac1" and "ol9-19c-rac2" virtual machines are started, then login to "ol9-19c-rac1" as the oracle user and unzip the database software to target directory on the first node. Don’t do this on the second node.
 ```console
-unzip -d /u01/app/oracle/product/19.0.0/db_1 V982063-01.zip
+unzip -qqd /u01/app/oracle/product/19.0.0/db_1 V982063-01.zip
 ```
-Then start the Oracle installer. Check that all services are up using "crsctl stat res -t", as described before.
+Replace the old OPatch with new version.
+```console
+$ mv /u01/app/oracle/product/19c/dbhome_1/OPatch /u01/app/oracle/product/19.0.0/db_1/OPatch_bkp
+$ unzip -qqd /u01/app/oracle/product/19.0.0/db_1 /soft/p6880880_190000_Linux-x86-64.zip
+```
+
+Then start the Oracle installer to perform Installation using 19.22 DB RU+19.22 OCW Merge Patch. Check that all services are up using "crsctl stat res -t", as described before.
 ```console
 $ db_env
 $ cd $ORACLE_HOME
-$ ./runInstaller
+$ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>
 ```
 Select the "Set Up Software Only" option, then click the "Next" button.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194047@2x.jpg> "Install the Database Software")
