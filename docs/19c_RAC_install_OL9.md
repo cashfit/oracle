@@ -963,42 +963,67 @@ Instead, here's the interactive configuration.
 ```console
 cd /u01/app/19.0.0/grid
 export CV_ASSUME_DISTID=OL8
-./gridSetup.sh -applyRU <19.22 RU home>
+./gridsetup -applyRU <GI RU 35940989> -applyOneOffs <OJVM RU 35926646>
 ```
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184019@2x.jpg> "Install the Grid Infrastructure")
 Select the "Configure Oracle Grid Infrastructure for a New Cluster" option, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184049@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.07.47.png> "Install the Grid Infrastructure")
+
 Accept the "Configure an Oracle Standalone Cluster" option by clicking the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.08.05.png> "Install the Grid Infrastructure")
 
 Enter the cluster name "ol9-19c-cluster", SCAN name "ol9-19c-scan" and SCAN port "1521", then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184214@2x.jpg> "Install the Grid Infrastructure")
-On the "Cluster Node Information" screen, click the "Add" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184312@2x.jpg> "Install the Grid Infrastructure")
-Click "Test" button to test it once it is complete. Once the test is complete, click the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.08.58.png> "Install the Grid Infrastructure")
+
+On the "Cluster Node Information" screen, 
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.10.04.png> "Install the Grid Infrastructure")
+
+click the "Add" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.10.48.png> "Install the Grid Infrastructure")
+
+Click "Test" button to test it once it is complete. 
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.11.00.png> "Install the Grid Infrastructure")
+
+Once the test is complete, click the "Next" button.
 
 {: .warning }   
 > the ssh equivalence setup will fail on this screen, please use manual method mentioned above, and just test it.
  
 Check the public and private networks are specified correctly. Make sure enp0s8 are used for "Public", enp0s9 are used for "ASM & Private", If the NAT interface is displayed, remember to mark it as "Do Not Use". Click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184917@2x.jpg> "Install the Grid Infrastructure")
-Accept the "Use Oracle Flex ASM for storage" option by clicking the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-184858@2x.jpg> "Install the Grid Infrastructure")
-Select the "No" option, as we don't want to create a separate disk group for the GIMR in this case. Click the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.11.31.png> "Install the Grid Infrastructure")
 
-Set the redundancy to "External", click the "Change Discovery Path" button and set the path to "/dev/oracleasm/*". Return to the main screen and select all 4 disks. **Uncheck** the "Configure Oracle ASM Filter Driver" option, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185004@2x.jpg> "Install the Grid Infrastructure")
+Accept the "Use Oracle Flex ASM for storage" option by clicking the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.11.56.png> "Install the Grid Infrastructure")
+
+Select the "No" option, as we don't want to create a separate disk group for the GIMR in this case. Click the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.12.10.png> "Install the Grid Infrastructure")
+
+Set the redundancy to "External", click the "Change Discovery Path" button and set the path to "/dev/oracleasm/asm-disk*". Return to the main screen and select all 4 disks. **Uncheck** the "Configure Oracle ASM Filter Driver" option, then click the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.13.20.png> "Install the Grid Infrastructure")
 Enter the credentials and click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185024@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.13.39.png> "Install the Grid Infrastructure")
+
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.13.46.png> "Install the Grid Infrastructure")
+
 Accept the default IPMI option by clicking the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185035@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.13.52.png> "Install the Grid Infrastructure")
 Don't register with EM. Click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185045@2x.jpg> "Install the Grid Infrastructure")
-We are using a single user and group manage both ASM add the database, so set the groups to "dba" and click the "Next" button. Accept the warnings on the subsequent dialog by clicking the "Yes" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185132@2x.jpg> "Install the Grid Infrastructure")
-Enter the Oracle Base location "/u01/app/oracle" and click the "Next" button. We have already pre-created directories for the later database installation, so ignore the subsequent warning about the Oracle Base not being empty by clicking the "Yes" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185158@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.13.58.png> "Install the Grid Infrastructure")
+We are using a single user and group manage both ASM add the database, so set the groups to "dba" and click the "Next" button. 
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.14.04.png> "Install the Grid Infrastructure")
+
+Accept the warnings on the subsequent dialog by clicking the "Yes" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.14.13.png> "Install the Grid Infrastructure")
+
+Enter the Oracle Base location "/u01/app/oracle" and click the "Next" button. 
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.14.57.png> "Install the Grid Infrastructure")
+We have already pre-created directories for the later database installation, so ignore the subsequent warning about the Oracle Base not being empty by clicking the "Yes" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.15.12.png> "Install the Grid Infrastructure")
+
 Accept the default inventory directory by clicking the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185518@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.15.17.png> "Install the Grid Infrastructure")
+Accept the default root script execution.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.15.25.png> "Install the Grid Infrastructure")
+
 Wait while the prerequisite checks complete. If you have any issues use the "Fix & Check Again" button. Once possible fixes are complete, check the "Ignore All" checkbox and click the "Next" button. It is likely the "Physical Memory" and "Network Time Protocol (NTP)" tests will fail for this type of installation. This is OK.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185737@2x.jpg> "Install the Grid Infrastructure")
 By check "Ignore All" to proceed the installation.
