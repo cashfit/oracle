@@ -1256,22 +1256,27 @@ $ db_env
 $ cd $ORACLE_HOME
 $ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>
 ```
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.18.png> "Install the Database Software")
+
 Select the "Set Up Software Only" option, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194047@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.27.png> "Install the Database Software")
 Accept the "Oracle Real Application Clusters database installation" option by clicking the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194138@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.48.png> "Install the Database Software")
 Make sure both nodes are selected, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194210@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.56.png> "Install the Database Software")
+Click the "Test" to make sure nodes connection without password.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.22.15.png> "Install the Database Software")
+
 Select the "Enterprise Edition" option, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194630@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.22.25.png> "Install the Database Software")
 Enter "/u01/app/oracle" as the Oracle base, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194639@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.22.34.png> "Install the Database Software")
 Select the desired operating system groups, then click the "Next" button. In this case we are only using the "dba" group.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194725@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.22.47.png> "Install the Database Software")
 Accept the default options, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-194734@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.22.55.png> "Install the Database Software")
 Wait for the prerequisite check to complete. If there are any problems either click the "Fix & Check Again" button, or check the "Ignore All" checkbox and click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-195031@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.24.44.png> "Install the Database Software")
 
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-195100@2x.jpg> "Install the Database Software")
 If you are happy with the summary information, click the "Install" button.
