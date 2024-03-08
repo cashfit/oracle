@@ -1025,12 +1025,12 @@ Accept the default root script execution.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.15.25.png> "Install the Grid Infrastructure")
 
 Wait while the prerequisite checks complete. If you have any issues use the "Fix & Check Again" button. 
-![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 14.31.10.png> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.41.png> "Install the Grid Infrastructure")
 
 Once possible fixes are complete, check the "Ignore All" checkbox and click the "Next" button. It is likely the "Physical Memory" and "Network Time Protocol (NTP)" tests will fail for this type of installation. This is OK.
 
 By check "Ignore All" to proceed the installation.
-![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.41.png> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 14.31.10.png> "Install the Grid Infrastructure")
 
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.50.png> "Install the Grid Infrastructure")
 
