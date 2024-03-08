@@ -1278,12 +1278,13 @@ Accept the default options, and click "Next" button.
 Wait for the prerequisite check to complete. If there are any problems either click the "Fix & Check Again" button, or check the "Ignore All" checkbox and click the "Next" button.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.24.44.png> "Install the Database Software")
 
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-195100@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.25.35.png> "Install the Database Software")
 If you are happy with the summary information, click the "Install" button.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-195114@2x.jpg> "Install the Database Software")
 Wait while the installation takes place.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-195943@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.25.44.png> "Install the Database Software")
 When prompted, run the configuration script on each node. When the scripts have been run on each node, click the "OK" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.29.40.png> "Install the Database Software")
 
 Click the "Close" button to exit the installer.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200437@2x.jpg> "Install the Database Software")
