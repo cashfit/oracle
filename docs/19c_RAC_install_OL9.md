@@ -1528,6 +1528,64 @@ The RAC database creation is now complete.
 ## Check the Status of the RAC
 There are several ways to check the status of the RAC. The srvctl utility shows the current configuration and status of the RAC database.
 ```console
+grid@oadb1[+ASM1]:/home/grid$ crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.chad
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.net1.network
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.ons
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.FRA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       oadb2                    STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    Started,STABLE
+      2        ONLINE  ONLINE       oadb2                    Started,STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.cvu
+      1        ONLINE  ONLINE       oadb2                    STABLE
+ora.oadb1.vip
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.oadb2.vip
+      1        ONLINE  ONLINE       oadb2                    STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       oadb2                    STABLE
+ora.rac.db
+      1        ONLINE  ONLINE       oadb1                    Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+      2        ONLINE  ONLINE       oadb2                    Open,HOME=/u01/app/o
+                                                             racle/product/19.0.0
+                                                             /db_1,STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       oadb2                    STABLE
+--------------------------------------------------------------------------------
+grid@oadb1[+ASM1]:/home/grid$
+
 [oracle@ol9-19c-rac1 cdbrac]$ grid_env
 [oracle@ol9-19c-rac1 cdbrac]$ srvctl config database -d cdbrac
 Database unique name: cdbrac
