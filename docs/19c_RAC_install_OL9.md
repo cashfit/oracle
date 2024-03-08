@@ -1024,14 +1024,20 @@ Accept the default inventory directory by clicking the "Next" button.
 Accept the default root script execution.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.15.25.png> "Install the Grid Infrastructure")
 
-Wait while the prerequisite checks complete. If you have any issues use the "Fix & Check Again" button. Once possible fixes are complete, check the "Ignore All" checkbox and click the "Next" button. It is likely the "Physical Memory" and "Network Time Protocol (NTP)" tests will fail for this type of installation. This is OK.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-185737@2x.jpg> "Install the Grid Infrastructure")
+Wait while the prerequisite checks complete. If you have any issues use the "Fix & Check Again" button. 
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.16.47.png> "Install the Grid Infrastructure")
+
+Once possible fixes are complete, check the "Ignore All" checkbox and click the "Next" button. It is likely the "Physical Memory" and "Network Time Protocol (NTP)" tests will fail for this type of installation. This is OK.
+
 By check "Ignore All" to proceed the installation.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.41.png> "Install the Grid Infrastructure")
+
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.50.png> "Install the Grid Infrastructure")
 
 Wait while the installation takes place.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-190342@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.32.55.png> "Install the Grid Infrastructure")
 When prompted, run the configuration scripts on each node.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-190914@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 16.40.23.png> "Install the Grid Infrastructure")
 The output from the "orainstRoot.sh" file should look something like that listed below.
 ```console
 [root@ol9-19c-rac1 ~]# /u01/app/oraInventory/orainstRoot.sh 
@@ -1162,7 +1168,7 @@ The log of current session can be found at:
 Once the scripts have completed, return to the "Execute Configuration Scripts" screen on "ol9-19c-rac1" and click the "OK" button.
 
 Wait for the configuration assistants to complete.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-193235@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 17.28.33.png> "Install the Grid Infrastructure")
 If any of the configuration steps fail you should check the specified log to see if the error is a show-stopper or not. 
 
 Provided you don't have any show-stoppers, it is safe to ignore the errors by clicking "Next" button.
