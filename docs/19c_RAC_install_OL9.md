@@ -1172,9 +1172,12 @@ Wait for the configuration assistants to complete.
 If any of the configuration steps fail you should check the specified log to see if the error is a show-stopper or not. 
 
 Provided you don't have any show-stoppers, it is safe to ignore the errors by clicking "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-193606@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 17.30.23.png> "Install the Grid Infrastructure")
+Click the "Yes" button to continue.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 17.30.30.png> "Install the Grid Infrastructure")
+
 Click the "Close" button to exit the installer.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-193620@2x.jpg> "Install the Grid Infrastructure")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 17.30.35.png> "Install the Grid Infrastructure")
 The grid infrastructure installation is now complete. We can check the status of the installation using the following commands.
 ```console
 [root@ol9-19c-rac1 ~]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
