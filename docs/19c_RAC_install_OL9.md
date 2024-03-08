@@ -1287,7 +1287,7 @@ When prompted, run the configuration script on each node. When the scripts have 
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.29.40.png> "Install the Database Software")
 
 Click the "Close" button to exit the installer.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200437@2x.jpg> "Install the Database Software")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.30.17.png> "Install the Database Software")
 Shutdown both VMs and take snapshots. Remember to make a fresh zip of the ASM disks on the host machine, which you will need to restore if you revert to the post-db snapshots.
 ```console
 $ cd /u04/VirtualBox/ol9-19c-rac
@@ -1301,17 +1301,17 @@ $ db_env
 $ dbca
 ```
 Select the "Create Database" option and click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200513@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 10.30.46.png> "Create a Database")
 Select the "Advanced Mode" option. Click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200545@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 10.31.05.png> "Create a Database")
 Check the "Custom Database" option and click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200603@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 10.31.15.png> "Create a Database")
 Make sure both nodes are selected, then click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200615@2x.jpg> "Create a Database")
-Enter the container database name (cdbrac), pluggable database name (pdb) and administrator password. Click the "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200740@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 10.31.22.png> "Create a Database")
+Enter the container database name (cdb), pluggable database name (pdb) and administrator password. Click the "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 10.38.14.png> "Create a Database")
 Accept the default values, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200818@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.31.07.png> "Create a Database")
 Accept the default values, and click "Next" button.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200859@2x.jpg> "Create a Database")
 Accept the default values, and click "Next" button.
