@@ -880,7 +880,7 @@ Prior to 11gR2 we would probably use the "runcluvfy.sh" utility in the clusterwa
 
 {: .warning }    
 > The SSH equivalence during the OUI installer will fail for unsupported SSH key format. OpenSSH v7.8 and higher generates RSA private keys by default in the OpenSSH format, instead of the previous default PEM format. The OpenSSH key format offers substantially better protection against offline password guessing and supports key comments in private keys.
-> Manually setup SSH passwordless is necessary for a successfully installation, with ssh-keygen -m pem option.
+> Manually setup SSH passwordless is necessary for a successfully installation, with ssh-keygen -m pem option. use ssh-copy-id to setup passwordless for both grid and oracle user.
 
 If you get any failures be sure to correct them before proceeding.
 The virtual machine setup is now complete.
@@ -1052,75 +1052,11 @@ The execution of the script is complete.
 
 The output of the "root.sh" will vary a little depending on the node it is run on. Example output can be seen here.
 ```console
-[root@ol9-19c-rac1 ~]# /u01/app/19.0.0/grid/root.sh
+[root@oadb1 ~]# /u01/app/19.0.0/grid/root.sh
 Performing root user operation.
 
 The following environment variables are set as:
-    ORACLE_OWNER= oracle
-    ORACLE_HOME=  /u01/app/19.0.0/grid
-
-Enter the full pathname of the local bin directory: [/usr/local/bin]: 
-The contents of "dbhome" have not changed. No need to overwrite.
-The contents of "oraenv" have not changed. No need to overwrite.
-The contents of "coraenv" have not changed. No need to overwrite.
-
-Entries will be added to the /etc/oratab file as needed by
-Database Configuration Assistant when a database is created
-Finished running generic part of root script.
-Now product-specific root actions will be performed.
-Relinking oracle with rac_on option
-Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
-The log of current session can be found at:
-  /u01/app/oracle/crsdata/ol931/crsconfig/rootcrs_ol931_2024-01-31_09-51-07PM.log
-2024/01/31 21:52:18 CLSRSC-594: Executing installation step 1 of 19: 'ValidateEnv'.
-2024/01/31 21:52:19 CLSRSC-594: Executing installation step 2 of 19: 'CheckFirstNode'.
-2024/01/31 21:52:26 CLSRSC-594: Executing installation step 3 of 19: 'GenSiteGUIDs'.
-2024/01/31 21:52:32 CLSRSC-594: Executing installation step 4 of 19: 'SetupOSD'.
-2024/01/31 21:52:33 CLSRSC-594: Executing installation step 5 of 19: 'CheckCRSConfig'.
-2024/01/31 21:52:34 CLSRSC-594: Executing installation step 6 of 19: 'SetupLocalGPNP'.
-2024/01/31 21:52:36 CLSRSC-594: Executing installation step 7 of 19: 'CreateRootCert'.
-2024/01/31 21:52:55 CLSRSC-594: Executing installation step 8 of 19: 'ConfigOLR'.
-2024/01/31 21:52:57 CLSRSC-594: Executing installation step 9 of 19: 'ConfigCHMOS'.
-2024/01/31 21:53:29 CLSRSC-594: Executing installation step 10 of 19: 'CreateOHASD'.
-2024/01/31 21:53:30 CLSRSC-594: Executing installation step 11 of 19: 'ConfigOHASD'.
-2024/01/31 21:53:42 CLSRSC-594: Executing installation step 12 of 19: 'SetupTFA'.
-2024/01/31 21:53:42 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
-2024/01/31 21:53:42 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
-2024/01/31 21:53:46 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
-2024/01/31 21:54:31 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
-2024/01/31 21:55:11 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
-
-[INFO] [DBT-30161] Disk label(s) created successfully. Check /u01/app/oracle/cfgtoollogs/asmca/asmca-240131PM095538.log for details.
-
-
-2024/01/31 21:57:24 CLSRSC-482: Running command: '/u01/app/19.0.0/grid/bin/ocrconfig -upgrade oracle oinstall'
-CRS-4256: Updating the profile
-Successful addition of voting disk 27e985d9ed4f4fbdbf281c0028d8dc2b.
-Successfully replaced voting disk group with +DATA.
-CRS-4256: Updating the profile
-CRS-4266: Voting file(s) successfully replaced
-##  STATE    File Universal Id                File Name Disk group
---  -----    -----------------                --------- ---------
- 1. ONLINE   27e985d9ed4f4fbdbf281c0028d8dc2b (AFD:DATA1) [DATA]
-Located 1 voting disk(s).
-
-2024/01/31 22:06:42 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
-2024/01/31 22:07:52 CLSRSC-343: Successfully started Oracle Clusterware stack
-2024/01/31 22:07:52 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
-2024/01/31 22:11:24 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
-2024/01/31 22:13:01 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
-[root@ol9-19c-rac1 ~]# su - oracle
-Last login: Tue Nov 19 06:23:11 EST 2019 on pts/1
-ss[oracle@ol9-19c-rac1 ~]$ ssh ol9-19c-rac2
-Last login: Tue Nov 19 06:09:27 2019 from ol9-19c-rac1
-[oracle@ol9-19c-rac2 ~]$ su - 
-Password: 
-Last login: Tue Nov 19 06:09:30 EST 2019 on pts/1
-[root@ol9-19c-rac2 ~]# /u01/app/19.0.0/grid/root.sh
-Performing root user operation.
-
-The following environment variables are set as:
-    ORACLE_OWNER= oracle
+    ORACLE_OWNER= grid
     ORACLE_HOME=  /u01/app/19.0.0/grid
 
 Enter the full pathname of the local bin directory: [/usr/local/bin]: 
@@ -1137,32 +1073,180 @@ Now product-specific root actions will be performed.
 Relinking oracle with rac_on option
 Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
 The log of current session can be found at:
-  /u01/app/oracle/crsdata/ol9-19c-rac2/crsconfig/rootcrs_ol9-19c-rac2_2019-11-19_06-24-56AM.log
-2024/2/13 06:25:07 CLSRSC-594: Executing installation step 1 of 19: 'SetupTFA'.
-2024/2/13 06:25:07 CLSRSC-594: Executing installation step 2 of 19: 'ValidateEnv'.
-2024/2/13 06:25:07 CLSRSC-363: User ignored prerequisites during installation
-2024/2/13 06:25:07 CLSRSC-594: Executing installation step 3 of 19: 'CheckFirstNode'.
-2024/2/13 06:25:09 CLSRSC-594: Executing installation step 4 of 19: 'GenSiteGUIDs'.
-2024/2/13 06:25:10 CLSRSC-594: Executing installation step 5 of 19: 'SetupOSD'.
-2024/2/13 06:25:10 CLSRSC-594: Executing installation step 6 of 19: 'CheckCRSConfig'.
-2019/11/19 06:25:11 CLSRSC-594: Executing installation step 7 of 19: 'SetupLocalGPNP'.
-2019/11/19 06:25:14 CLSRSC-594: Executing installation step 8 of 19: 'CreateRootCert'.
-2019/11/19 06:25:14 CLSRSC-594: Executing installation step 9 of 19: 'ConfigOLR'.
-2019/11/19 06:25:33 CLSRSC-594: Executing installation step 10 of 19: 'ConfigCHMOS'.
-2019/11/19 06:25:34 CLSRSC-594: Executing installation step 11 of 19: 'CreateOHASD'.
-2019/11/19 06:25:48 CLSRSC-594: Executing installation step 12 of 19: 'ConfigOHASD'.
-2019/11/19 06:25:51 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
-2019/11/19 06:26:36 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
-2019/11/19 06:26:41 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
-2019/11/19 06:26:44 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
-2019/11/19 06:26:48 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
-2019/11/19 06:26:52 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
-2019/11/19 06:27:12 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
-2019/11/19 06:28:23 CLSRSC-343: Successfully started Oracle Clusterware stack
-2019/11/19 06:28:23 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
-2019/11/19 06:29:24 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
-2019/11/19 06:29:56 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
-[root@ol9-19c-rac2 ~]#
+  /u01/app/oracle/crsdata/oadb1/crsconfig/rootcrs_oadb1_2024-03-06_04-41-30PM.log
+2024/03/06 16:41:50 CLSRSC-594: Executing installation step 1 of 19: 'ValidateEnv'.
+2024/03/06 16:41:51 CLSRSC-594: Executing installation step 2 of 19: 'CheckFirstNode'.
+2024/03/06 16:41:52 CLSRSC-594: Executing installation step 3 of 19: 'GenSiteGUIDs'.
+2024/03/06 16:41:53 CLSRSC-594: Executing installation step 4 of 19: 'SetupOSD'.
+Redirecting to /bin/systemctl restart rsyslog.service
+2024/03/06 16:41:54 CLSRSC-594: Executing installation step 5 of 19: 'CheckCRSConfig'.
+2024/03/06 16:41:54 CLSRSC-594: Executing installation step 6 of 19: 'SetupLocalGPNP'.
+2024/03/06 16:42:06 CLSRSC-594: Executing installation step 7 of 19: 'CreateRootCert'.
+2024/03/06 16:42:10 CLSRSC-594: Executing installation step 8 of 19: 'ConfigOLR'.
+2024/03/06 16:42:26 CLSRSC-594: Executing installation step 9 of 19: 'ConfigCHMOS'.
+2024/03/06 16:42:26 CLSRSC-594: Executing installation step 10 of 19: 'CreateOHASD'.
+2024/03/06 16:42:32 CLSRSC-594: Executing installation step 11 of 19: 'ConfigOHASD'.
+2024/03/06 16:42:36 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2024/03/06 16:43:01 CLSRSC-594: Executing installation step 12 of 19: 'SetupTFA'.
+2024/03/06 16:43:01 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2024/03/06 16:43:01 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2024/03/06 16:43:49 CLSRSC-400: A system reboot is required to continue installing.
+[root@oadb1 ~]# 2024/03/06 16:46:29 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+
+```
+
+If you are not using ACFS, you can safely disable ACFS by renaming $GRID_HOME/bin/acfsroot, acfsload and acfsdriverstate.
+
+then we try reexecute root.sh
+
+```console
+[root@oadb1 grid]# ./root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= grid
+    ORACLE_HOME=  /u01/app/19.0.0/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+The contents of "dbhome" have not changed. No need to overwrite.
+The contents of "oraenv" have not changed. No need to overwrite.
+The contents of "coraenv" have not changed. No need to overwrite.
+
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/oadb1/crsconfig/rootcrs_oadb1_2024-03-06_05-04-38PM.log
+2024/03/06 17:04:43 CLSRSC-594: Executing installation step 1 of 19: 'ValidateEnv'.
+2024/03/06 17:04:43 CLSRSC-594: Executing installation step 2 of 19: 'CheckFirstNode'.
+2024/03/06 17:04:45 CLSRSC-594: Executing installation step 3 of 19: 'GenSiteGUIDs'.
+2024/03/06 17:04:46 CLSRSC-594: Executing installation step 4 of 19: 'SetupOSD'.
+2024/03/06 17:04:46 CLSRSC-594: Executing installation step 5 of 19: 'CheckCRSConfig'.
+2024/03/06 17:04:46 CLSRSC-594: Executing installation step 6 of 19: 'SetupLocalGPNP'.
+2024/03/06 17:04:47 CLSRSC-594: Executing installation step 7 of 19: 'CreateRootCert'.
+2024/03/06 17:04:51 CLSRSC-594: Executing installation step 8 of 19: 'ConfigOLR'.
+2024/03/06 17:04:51 CLSRSC-594: Executing installation step 9 of 19: 'ConfigCHMOS'.
+2024/03/06 17:05:22 CLSRSC-594: Executing installation step 10 of 19: 'CreateOHASD'.
+2024/03/06 17:05:23 CLSRSC-594: Executing installation step 11 of 19: 'ConfigOHASD'.
+2024/03/06 17:05:29 CLSRSC-594: Executing installation step 12 of 19: 'SetupTFA'.
+2024/03/06 17:05:29 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2024/03/06 17:05:29 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2024/03/06 17:05:34 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2024/03/06 17:05:40 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+2024/03/06 17:06:29 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+
+ASM has been created and started successfully.
+
+[DBT-30001] Disk groups created successfully. Check /u01/app/oracle/cfgtoollogs/asmca/asmca-240306PM050610.log for details.
+
+2024/03/06 17:07:13 CLSRSC-482: Running command: '/u01/app/19.0.0/grid/bin/ocrconfig -upgrade grid oinstall'
+CRS-4256: Updating the profile
+Successful addition of voting disk 60c091675e1e4f70bfe52f98de9b83f4.
+Successfully replaced voting disk group with +DATA.
+CRS-4256: Updating the profile
+CRS-4266: Voting file(s) successfully replaced
+##  STATE    File Universal Id                File Name Disk group
+--  -----    -----------------                --------- ---------
+ 1. ONLINE   60c091675e1e4f70bfe52f98de9b83f4 (/dev/oracleasm/asm-disk1) [DATA]
+Located 1 voting disk(s).
+2024/03/06 17:08:17 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+2024/03/06 17:09:19 CLSRSC-343: Successfully started Oracle Clusterware stack
+2024/03/06 17:09:19 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2024/03/06 17:10:32 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2024/03/06 17:10:54 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+[root@oadb1 grid]#
+
+[root@oadb2 ~]# /u01/app/19.0.0/grid/root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= grid
+    ORACLE_HOME=  /u01/app/19.0.0/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+   Copying dbhome to /usr/local/bin ...
+   Copying oraenv to /usr/local/bin ...
+   Copying coraenv to /usr/local/bin ...
+
+
+Creating /etc/oratab file...
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/oadb2/crsconfig/rootcrs_oadb2_2024-03-06_05-12-47PM.log
+2024/03/06 17:13:10 CLSRSC-594: Executing installation step 1 of 19: 'ValidateEnv'.
+2024/03/06 17:13:11 CLSRSC-594: Executing installation step 2 of 19: 'CheckFirstNode'.
+2024/03/06 17:13:12 CLSRSC-594: Executing installation step 3 of 19: 'GenSiteGUIDs'.
+2024/03/06 17:13:12 CLSRSC-594: Executing installation step 4 of 19: 'SetupOSD'.
+Redirecting to /bin/systemctl restart rsyslog.service
+2024/03/06 17:13:12 CLSRSC-594: Executing installation step 5 of 19: 'CheckCRSConfig'.
+2024/03/06 17:13:12 CLSRSC-594: Executing installation step 6 of 19: 'SetupLocalGPNP'.
+2024/03/06 17:13:13 CLSRSC-594: Executing installation step 7 of 19: 'CreateRootCert'.
+2024/03/06 17:13:14 CLSRSC-594: Executing installation step 8 of 19: 'ConfigOLR'.
+2024/03/06 17:13:24 CLSRSC-594: Executing installation step 9 of 19: 'ConfigCHMOS'.
+2024/03/06 17:13:24 CLSRSC-594: Executing installation step 10 of 19: 'CreateOHASD'.
+2024/03/06 17:13:25 CLSRSC-594: Executing installation step 11 of 19: 'ConfigOHASD'.
+2024/03/06 17:13:29 CLSRSC-330: Adding Clusterware entries to file 'oracle-ohasd.service'
+2024/03/06 17:13:49 CLSRSC-594: Executing installation step 12 of 19: 'SetupTFA'.
+2024/03/06 17:13:49 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2024/03/06 17:13:49 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2024/03/06 17:14:27 CLSRSC-400: A system reboot is required to continue installing.
+[root@oadb2 ~]# cd /u01/app/19.0.0/grid/bin
+[root@oadb2 bin]# mv acfsroot acfsroot.bak
+[root@oadb2 bin]# mv acfsload acfsload.bak
+[root@oadb2 bin]# mv acfsdriverstate acfsdriverstate.bak
+[root@oadb2 bin]# cd ..
+[root@oadb2 grid]# /u01/app/19.0.0/grid/root.sh
+Performing root user operation.
+
+The following environment variables are set as:
+    ORACLE_OWNER= grid
+    ORACLE_HOME=  /u01/app/19.0.0/grid
+
+Enter the full pathname of the local bin directory: [/usr/local/bin]: 
+The contents of "dbhome" have not changed. No need to overwrite.
+The contents of "oraenv" have not changed. No need to overwrite.
+The contents of "coraenv" have not changed. No need to overwrite.
+
+Entries will be added to the /etc/oratab file as needed by
+Database Configuration Assistant when a database is created
+Finished running generic part of root script.
+Now product-specific root actions will be performed.
+Relinking oracle with rac_on option
+Using configuration parameter file: /u01/app/19.0.0/grid/crs/install/crsconfig_params
+The log of current session can be found at:
+  /u01/app/oracle/crsdata/oadb2/crsconfig/rootcrs_oadb2_2024-03-06_05-15-24PM.log
+2024/03/06 17:15:28 CLSRSC-594: Executing installation step 1 of 19: 'ValidateEnv'.
+2024/03/06 17:15:28 CLSRSC-594: Executing installation step 2 of 19: 'CheckFirstNode'.
+2024/03/06 17:15:29 CLSRSC-594: Executing installation step 3 of 19: 'GenSiteGUIDs'.
+2024/03/06 17:15:29 CLSRSC-594: Executing installation step 4 of 19: 'SetupOSD'.
+2024/03/06 17:15:29 CLSRSC-594: Executing installation step 5 of 19: 'CheckCRSConfig'.
+2024/03/06 17:15:30 CLSRSC-594: Executing installation step 6 of 19: 'SetupLocalGPNP'.
+2024/03/06 17:15:31 CLSRSC-594: Executing installation step 7 of 19: 'CreateRootCert'.
+2024/03/06 17:15:31 CLSRSC-594: Executing installation step 8 of 19: 'ConfigOLR'.
+2024/03/06 17:15:32 CLSRSC-594: Executing installation step 9 of 19: 'ConfigCHMOS'.
+2024/03/06 17:16:02 CLSRSC-594: Executing installation step 10 of 19: 'CreateOHASD'.
+2024/03/06 17:16:03 CLSRSC-594: Executing installation step 11 of 19: 'ConfigOHASD'.
+2024/03/06 17:16:09 CLSRSC-594: Executing installation step 12 of 19: 'SetupTFA'.
+2024/03/06 17:16:09 CLSRSC-594: Executing installation step 13 of 19: 'InstallAFD'.
+2024/03/06 17:16:09 CLSRSC-594: Executing installation step 14 of 19: 'InstallACFS'.
+2024/03/06 17:16:09 CLSRSC-4004: Failed to install Oracle Trace File Analyzer (TFA) Collector. Grid Infrastructure operations will continue.
+2024/03/06 17:16:11 CLSRSC-594: Executing installation step 15 of 19: 'InstallKA'.
+2024/03/06 17:16:12 CLSRSC-594: Executing installation step 16 of 19: 'InitConfig'.
+2024/03/06 17:16:22 CLSRSC-594: Executing installation step 17 of 19: 'StartCluster'.
+2024/03/06 17:17:05 CLSRSC-343: Successfully started Oracle Clusterware stack
+2024/03/06 17:17:05 CLSRSC-594: Executing installation step 18 of 19: 'ConfigNode'.
+2024/03/06 17:17:13 CLSRSC-594: Executing installation step 19 of 19: 'PostConfig'.
+2024/03/06 17:17:21 CLSRSC-4002: Successfully installed Oracle Trace File Analyzer (TFA) Collector.
+2024/03/06 17:17:21 CLSRSC-325: Configure Oracle Grid Infrastructure for a Cluster ... succeeded
+[root@oadb2 grid]#
 ```
 
 Once the scripts have completed, return to the "Execute Configuration Scripts" screen on "ol9-19c-rac1" and click the "OK" button.
@@ -1180,57 +1264,129 @@ Click the "Close" button to exit the installer.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-06 at 17.30.35.png> "Install the Grid Infrastructure")
 The grid infrastructure installation is now complete. We can check the status of the installation using the following commands.
 ```console
-[root@ol9-19c-rac1 ~]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
+[root@oadb1 grid]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
 --------------------------------------------------------------------------------
 Name           Target  State        Server                   State details       
 --------------------------------------------------------------------------------
 Local Resources
 --------------------------------------------------------------------------------
 ora.LISTENER.lsnr
-               ONLINE  ONLINE       ol9-19c-rac1             STABLE
-               ONLINE  ONLINE       ol9-19c-rac2             STABLE
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
 ora.chad
-               ONLINE  ONLINE       ol9-19c-rac1             STABLE
-               ONLINE  ONLINE       ol9-19c-rac2             STABLE
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
 ora.net1.network
-               ONLINE  ONLINE       ol9-19c-rac1             STABLE
-               ONLINE  ONLINE       ol9-19c-rac2             STABLE
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
 ora.ons
-               ONLINE  ONLINE       ol9-19c-rac1             STABLE
-               ONLINE  ONLINE       ol9-19c-rac2             STABLE
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
 --------------------------------------------------------------------------------
 Cluster Resources
 --------------------------------------------------------------------------------
 ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
-      2        ONLINE  ONLINE       ol9-19c-rac2             STABLE
-      3        OFFLINE OFFLINE                               STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
 ora.DATA.dg(ora.asmgroup)
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
-      2        ONLINE  ONLINE       ol9-19c-rac2             STABLE
-      3        OFFLINE OFFLINE                               STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
 ora.LISTENER_SCAN1.lsnr
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
 ora.asm(ora.asmgroup)
-      1        ONLINE  ONLINE       ol9-19c-rac1             Started,STABLE
-      2        ONLINE  ONLINE       ol9-19c-rac2             Started,STABLE
-      3        OFFLINE OFFLINE                               STABLE
+      1        ONLINE  ONLINE       oadb1                    Started,STABLE
+      2        ONLINE  ONLINE       oadb2                    Started,STABLE
 ora.asmnet1.asmnetwork(ora.asmgroup)
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
-      2        ONLINE  ONLINE       ol9-19c-rac2             STABLE
-      3        OFFLINE OFFLINE                               STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
 ora.cvu
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
-ora.ol9-19c-rac1.vip
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
-ora.ol9-19c-rac2.vip
-      1        ONLINE  ONLINE       ol9-19c-rac2             STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.oadb1.vip
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.oadb2.vip
+      1        ONLINE  ONLINE       oadb2                    STABLE
 ora.qosmserver
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
 ora.scan1.vip
-      1        ONLINE  ONLINE       ol9-19c-rac1             STABLE
+      1        ONLINE  ONLINE       oadb1                    STABLE
 --------------------------------------------------------------------------------
-[root@ol9-19c-rac1 ~]#
+[root@oadb1 grid]# 
+
+
+[root@oadb2 grid]# /u01/app/19.0.0/grid/bin/crsctl stat res -t
+--------------------------------------------------------------------------------
+Name           Target  State        Server                   State details       
+--------------------------------------------------------------------------------
+Local Resources
+--------------------------------------------------------------------------------
+ora.LISTENER.lsnr
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.chad
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.net1.network
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+ora.ons
+               ONLINE  ONLINE       oadb1                    STABLE
+               ONLINE  ONLINE       oadb2                    STABLE
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.ASMNET1LSNR_ASM.lsnr(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.DATA.dg(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.LISTENER_SCAN1.lsnr
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.asm(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    Started,STABLE
+      2        ONLINE  ONLINE       oadb2                    Started,STABLE
+ora.asmnet1.asmnetwork(ora.asmgroup)
+      1        ONLINE  ONLINE       oadb1                    STABLE
+      2        ONLINE  ONLINE       oadb2                    STABLE
+ora.cvu
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.oadb1.vip
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.oadb2.vip
+      1        ONLINE  ONLINE       oadb2                    STABLE
+ora.qosmserver
+      1        ONLINE  ONLINE       oadb1                    STABLE
+ora.scan1.vip
+      1        ONLINE  ONLINE       oadb1                    STABLE
+--------------------------------------------------------------------------------
+[root@oadb2 grid]#
+```
+
+To check the patch installed.
+
+```console
+[grid@oadb1 OPatch]$ ./opatch lspatches
+35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
+36115038;TOMCAT RELEASE UPDATE 19.0.0.0.0 (36115038)
+35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
+35956421;ACFS RELEASE UPDATE 19.22.0.0.0 (35956421)
+35943157;Database Release Update : 19.22.0.0.240116 (35943157)
+33575402;DBWLM RELEASE UPDATE 19.0.0.0.0 (33575402)
+
+OPatch succeeded.
+[grid@oadb1 OPatch]$ 
+
+
+[grid@oadb2 OPatch]$ ./opatch lspatches
+35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
+36115038;TOMCAT RELEASE UPDATE 19.0.0.0.0 (36115038)
+35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
+35956421;ACFS RELEASE UPDATE 19.22.0.0.0 (35956421)
+35943157;Database Release Update : 19.22.0.0.240116 (35943157)
+33575402;DBWLM RELEASE UPDATE 19.0.0.0.0 (33575402)
+
+OPatch succeeded.
+
 ```
 
 At this point it is probably a good idea to shutdown both VMs and take snapshots. Remember to make a fresh zip of the ASM disks on the host machine, which you will need to restore if you revert to the post-grid snapshots.
@@ -1254,7 +1410,7 @@ Then start the Oracle installer to perform Installation using 19.22 DB RU+19.22 
 ```console
 $ db_env
 $ cd $ORACLE_HOME
-$ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>
+$ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>,<19.22 OJVM RU unzip location>
 ```
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.18.png> "Install the Database Software")
 
@@ -1288,6 +1444,26 @@ When prompted, run the configuration script on each node. When the scripts have 
 
 Click the "Close" button to exit the installer.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.30.17.png> "Install the Database Software")
+
+Check patches installed on database home.
+
+```console
+oracle@oadb1[cdb1]:/home/oracle$ opatch lspatches
+35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
+35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
+35943157;Database Release Update : 19.22.0.0.240116 (35943157)
+
+OPatch succeeded.
+oracle@oadb1[cdb1]:/home/oracle$ 
+
+oracle@oadb2[cdb2]:/home/oracle$ opatch lspatches
+35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
+35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
+35943157;Database Release Update : 19.22.0.0.240116 (35943157)
+
+OPatch succeeded.
+```
+
 Shutdown both VMs and take snapshots. Remember to make a fresh zip of the ASM disks on the host machine, which you will need to restore if you revert to the post-db snapshots.
 ```console
 $ cd /u04/VirtualBox/ol9-19c-rac
