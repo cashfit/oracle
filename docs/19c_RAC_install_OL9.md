@@ -1313,29 +1313,38 @@ Enter the container database name (cdb), pluggable database name (pdb) and admin
 Accept the default values, and click "Next" button.
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.31.07.png> "Create a Database")
 Accept the default values, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200859@2x.jpg> "Create a Database")
-Accept the default values, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-200942@2x.jpg> "Create a Database")
-Accept the default values, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201022@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.31.25.png> "Create a Database")
+Or set your desired options.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.32.04.png> "Create a Database")
 
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201044@2x.jpg> "Create a Database")
+Accept the default values, and click "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.32.16.png> "Create a Database")
+Accept the default values, and click "Next" button.
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.32.54.png> "Create a Database")
+
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.33.04.png> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.33.40.png> "Create a Database")
+
+
 Deselect the CVU and EM options, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201119@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.34.17.png> "Create a Database")
 Enter dba password, and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201137@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.34.29.png> "Create a Database")
 
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201149@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.34.35.png> "Create a Database")
 
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201216@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.34.51.png> "Create a Database")
 
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201309@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.37.55.png> "Create a Database")
+
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.38.44.png> "Create a Database")
+
 Select "Ignore All", and click "Next" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201424@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.38.49.png> "Create a Database")
 If you are happy with the summary information, click the "Finish" button.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-201435@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.38.56.png> "Create a Database")
 Wait while the database creation takes place.
-![19c_RAC_install](<./19c_RAC_install/Jietu20191119-202201@2x.jpg> "Create a Database")
+![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 11.43.22.png> "Create a Database")
 If you want to modify passwords, click the "Password Management" button. When finished, click the "Close" button.
 ![19c_RAC_install](<./19c_RAC_install/Jietu20191119-233237@2x.jpg> "Create a Database")
 The RAC database creation is now complete.
