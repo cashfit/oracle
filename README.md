@@ -5,7 +5,7 @@ All about Oracle Database.
 
 this site is build :
 
-- uses the [Just the Docs] theme;
+- uses the [Just the Docs](https://github.com/just-the-docs/just-the-docs) theme;
 
 Pagination for pages:
 
