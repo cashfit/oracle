@@ -26,3 +26,6 @@ last_modified_date: 2024-3-11 12:26:12 +0800
 [Use NetworkManager and IP Command on Oracle Linux](https://docs.oracle.com/en/learn/ol-nmcli)   
 [在 Oracle Linux 上使用 NetworkManager 和 IP 命令](https://docs.oracle.com/zh-cn/learn/ol-nmcli)
 
+[Configuring SSH Tunnels in Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-ssh-tunnels)   
+[在 Oracle Linux 中配置 SSH 隧道](https://docs.oracle.com/zh-cn/learn/oracle-linux-ssh-tunnels)
+
