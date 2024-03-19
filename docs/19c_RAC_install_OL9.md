@@ -8,7 +8,7 @@ published: true
 
 # Oracle Database 19c RAC On Oracle Linux 9 Using VirtualBox
 {: .no_toc }
-**Created: 2024-2-13, Updated: 2024-3-8**
+**Created: 2024-2-13, Updated: 2024-3-18**
 
 <details open markdown="block">
   <summary>
@@ -21,7 +21,7 @@ published: true
 
 ---
 
-This article describes the installation of Oracle Database 19c RAC on Linux (Oracle Linux 9.3 64-bit) using VirtualBox (7.0.12) with no additional shared disk devices.
+This article describes the installation of Oracle Database 19c RAC on Linux (Oracle Linux 9.3 64-bit) using VirtualBox (7.0.14) with no additional shared disk devices.
 
 ## Introduction
 
@@ -50,6 +50,7 @@ Download the following software.
 - [Oracle 19c (19.3) Software (64 bit)](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
 - Oracle 19c 19.22 RU from MOS
 - OPatch for 19c latest version from MOS
+- other necessary patches such as ACFS patch from MOS
 
 {: .warning } 
 > This article has been updated for the 19c release and Oracle Linux 9 combination, but the installation is essentially unchanged since 12.2.0.1. Any variations specific for 19c and OL9 will be highlight.
@@ -138,11 +139,10 @@ When all packages installed and the installation complete by click "Reboot Syste
 
 To be consistent with the rest of the article, the following information should be set during the installation.
 - hostname: ol9-19c-rac1
-- enp0s3 (eth0): DHCP (Connect Automatically)
-- enp0s8 (eth1): IP=192.168.56.101, Subnet=255.255.255.0, Gateway=192.168.56.1, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
-- enp0s9 (eth2): IP=192.168.1.101, Subnet=255.255.255.0, Gateway=\<blank\>, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
+- ens224: IP=192.168.56.101, Subnet=255.255.255.0, Gateway=192.168.56.1, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
+- ens256: IP=192.168.1.101, Subnet=255.255.255.0, Gateway=\<blank\>, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
 
-You are free to change the IP addresses to suit your network, but remember to stay consistent with those adjustments throughout the rest of the article. Likewise, in this article I will refer to the network adapters as enp0s3, enp0s8 and enp0s9. In previous Linux versions they would have been eth0, eth1 and eth2 respectively.
+You are free to change the IP addresses to suit your network, but remember to stay consistent with those adjustments throughout the rest of the article. Likewise, in this article I will refer to the network adapters as ens224 and ens256. In previous Linux versions they would have been eth0 and eth2 respectively.
 
 ## Oracle Installation Prerequisites
 Perform either the Automatic Setup or the Manual Setup to complete the basic prerequisites. The Additional Setup is required for all installations.
@@ -204,7 +204,7 @@ net.core.wmem_default = 262144
 net.core.wmem_max = 1048576
 net.ipv4.conf.all.rp_filter = 2
 net.ipv4.conf.default.rp_filter = 2
-fs.aio-max-nr = 1048576
+fs.aio-max-nr = 1048576   >>> 3145728
 net.ipv4.ip_local_port_range = 9000 65500
 ```
 Run the following command to change the current kernel parameters.
@@ -365,6 +365,13 @@ groupadd -g 54330 racdba
 useradd -u 54321 -g oinstall -G dba,oper,backupdba,dgdba,kmdba,asmdba,asmoper,asmadmin,racdba oracle
 ```
 
+create grid system user for role seperated mode.
+```console
+groupadd -g 54329 asmadmin
+useradd -u 54322 -g oinstall -G oinstall,dba,asmadmin grid
+
+```
+
 ### Additional Setup
 The following steps must be performed, whether you did the manual or automatic setup.
 Perform the following steps whilst logged into the "ol9-19c-rac1" virtual machine as the root user.
@@ -409,41 +416,30 @@ There is no need to do the restart now. You can just run the following command.
 
 At this point, the networking for the first node should look something like the following. Notice that eth0 has no associated IP address because it is disabled.
 ```console
-# ifconfig
-enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        ether 08:00:27:53:d9:97  txqueuelen 1000  (Ethernet)
-        RX packets 58038  bytes 83641252 (79.7 MiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 5521  bytes 349672 (341.4 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.56.101  netmask 255.255.255.0  broadcast 192.168.56.255
-        inet6 fe80::a00:27ff:feac:6df9  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:ac:6d:f9  txqueuelen 1000  (Ethernet)
-        RX packets 2694  bytes 264006 (257.8 KiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 2333  bytes 622380 (607.7 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-enp0s9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 172.16.0.101  netmask 255.255.255.0  broadcast 172.16.0.255
-        inet6 fe80::a00:27ff:fead:1731  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:ad:17:31  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 58  bytes 6048 (5.9 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10<host>
-        loop  txqueuelen 1000  (Local Loopback)
-        RX packets 39  bytes 3690 (3.6 KiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 39  bytes 3690 (3.6 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-#
+[root@oadb1 ~]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens224: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:a4:87:b9 brd ff:ff:ff:ff:ff:ff
+    altname enp19s0
+    inet 10.158.81.103/24 brd 10.158.81.255 scope global noprefixroute ens224
+       valid_lft forever preferred_lft forever
+    inet 10.158.81.105/24 brd 10.158.81.255 scope global secondary ens224:1
+       valid_lft forever preferred_lft forever
+    inet 10.158.81.107/24 brd 10.158.81.255 scope global secondary ens224:2
+       valid_lft forever preferred_lft forever
+3: ens256: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:a4:00:af brd ff:ff:ff:ff:ff:ff
+    altname enp27s0
+    inet 192.168.56.103/24 brd 192.168.56.255 scope global noprefixroute ens256
+       valid_lft forever preferred_lft forever
+    inet 169.254.24.45/19 brd 169.254.31.255 scope global ens256:1
+       valid_lft forever preferred_lft forever
+[root@oadb1 ~]# 
 ```
 
 With this in place and the DNS configured the SCAN address is being resolved to all three IP addresses.
@@ -485,65 +481,14 @@ Make sure NTP (Chrony on OL9/RHEL9) is enabled.
 Create the directories in which the Oracle software will be installed.
 ```console
 mkdir -p /u01/app/19.0.0/grid
-mkdir -p /u01/app/oracle/product/19.0.0/db_1
-chown -R oracle:oinstall /u01
+mkdir -p /u01/app/grid
+mkdir -p /u01/app/oracle
+mkdir -p /u01/app/oracle/product/19.0.0/dbhome_1
+chown -R grid:oinstall /u01
+chown oracle:oinstall /u01/app/oracle
 chmod -R 775 /u01/
 ```
 
-Log in as the "oracle" user and add the following lines at the end of the "/home/oracle/.bash_profile" file.
-```console
-# Oracle Settings
-export TMP=/tmp
-export TMPDIR=$TMP
-
-export ORACLE_HOSTNAME=ol9-19c-rac1
-export ORACLE_UNQNAME=CDBRAC
-export ORACLE_BASE=/u01/app/oracle
-export GRID_HOME=/u01/app/19.0.0/grid
-export DB_HOME=$ORACLE_BASE/product/19.0.0/db_1
-export ORACLE_HOME=$DB_HOME
-export ORACLE_SID=cdbrac1
-export ORACLE_TERM=xterm
-export BASE_PATH=/usr/sbin:$PATH
-export PATH=$ORACLE_HOME/bin:$BASE_PATH
-
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
-export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
-
-alias grid_env='. /home/oracle/grid_env'
-alias db_env='. /home/oracle/db_env'
-```
-
-Create a file called "/home/oracle/grid_env" with the following contents.
-```console
-export ORACLE_SID=+ASM1
-export ORACLE_HOME=$GRID_HOME
-export PATH=$ORACLE_HOME/bin:$BASE_PATH
-
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
-export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
-```
-
-Create a file called "/home/oracle/db_env" with the following contents.
-```console
-export ORACLE_SID=cdbrac1
-export ORACLE_HOME=$DB_HOME
-export PATH=$ORACLE_HOME/bin:$BASE_PATH
-
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
-export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
-```
-
-Once the "/home/oracle/.bash_profile" has been run, you will be able to switch between environments as follows.
-```console
-$ grid_env
-$ echo $ORACLE_HOME
-/u01/app/19.0.0/grid
-$ db_env
-$ echo $ORACLE_HOME
-/u01/app/oracle/product/19.0.0/db_1
-$
-```
 
 We've made a lot of changes, so it's worth doing a reboot of the VM at this point to make sure all the changes have taken effect.
 ```console
@@ -775,9 +720,8 @@ Start the "ol9-19c-rac2" virtual machine by clicking the "Start" button on the t
 
 Log in to the "ol9-19c-rac2" virtual machine as the "root" user so we can reconfigure the network settings to match the following.
 - hostname: ol9-19c-rac2
-- enp0s3 (eth0): DHCP (*Not* Connect Automatically)
-- enp0s8 (eth1): IP=192.168.56.102, Subnet=255.255.255.0, Gateway=192.168.56.1, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
-- enp0s9 (eth2): IP=192.168.1.102, Subnet=255.255.255.0, Gateway=\<blank\>, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
+- ens224: IP=192.168.56.102, Subnet=255.255.255.0, Gateway=192.168.56.1, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
+- ens256: IP=192.168.1.102, Subnet=255.255.255.0, Gateway=\<blank\>, DNS=\<blank\>, Search=\<blank\> (Connect Automatically)
 
 Amend the hostname in the "/etc/hostname" file.
 ```console
@@ -801,41 +745,27 @@ Restart the virtual machines.
 ```
 At this point, the networking for the second node should look something like the following. Notice that eth0 has no associated IP address because it is disabled.
 ```console
-# ifconfig
-enp0s3 : flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        ether 08:00:27:dc:7c:74  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.56.102  netmask 255.255.255.0  broadcast 192.168.56.255
-        inet6 fe80::a00:27ff:fed9:c89a  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:d9:c8:9a  txqueuelen 1000  (Ethernet)
-        RX packets 197  bytes 19460 (19.0 KiB)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 178  bytes 27171 (26.5 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-enp0s9: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-        inet 192.168.1.102  netmask 255.255.255.0  broadcast 192.168.1.255
-        inet6 fe80::a00:27ff:feb4:6bf  prefixlen 64  scopeid 0x20<link>
-        ether 08:00:27:b4:06:bf  txqueuelen 1000  (Ethernet)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 30  bytes 4112 (4.0 KiB)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-        inet 127.0.0.1  netmask 255.0.0.0
-        inet6 ::1  prefixlen 128  scopeid 0x10<host>
-        loop  txqueuelen 0  (Local Loopback)
-        RX packets 4  bytes 420 (420.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 4  bytes 420 (420.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
+# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens224: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:a4:b3:ca brd ff:ff:ff:ff:ff:ff
+    altname enp19s0
+    inet 10.158.81.104/24 brd 10.158.81.255 scope global noprefixroute ens224
+       valid_lft forever preferred_lft forever
+    inet 10.158.81.106/24 brd 10.158.81.255 scope global secondary ens224:1
+       valid_lft forever preferred_lft forever
+3: ens256: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:50:56:a4:6e:f1 brd ff:ff:ff:ff:ff:ff
+    altname enp27s0
+    inet 192.168.56.104/24 brd 192.168.56.255 scope global noprefixroute ens256
+       valid_lft forever preferred_lft forever
+    inet 169.254.9.44/19 brd 169.254.31.255 scope global ens256:1
+       valid_lft forever preferred_lft forever
 #
 ```
 Edit the "/home/oracle/.bash_profile" file on the "ol9-19c-rac2" node to correct the ORACLE_SID and ORACLE_HOSTNAME values.
@@ -942,10 +872,10 @@ $ORACLE_HOME/bin/asmcmd afd_label DISK3 /dev/oracleasm/asm-disk3 --init
 $ORACLE_HOME/bin/asmcmd afd_label DISK4 /dev/oracleasm/asm-disk4 --init
 
 # Test Disks.
-$ORACLE_HOME//bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk1
-$ORACLE_HOME//bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk2
-$ORACLE_HOME//bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk3
-$ORACLE_HOME//bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk4
+$ORACLE_HOME/bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk1
+$ORACLE_HOME/bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk2
+$ORACLE_HOME/bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk3
+$ORACLE_HOME/bin/asmcmd afd_lslbl /dev/oracleasm/asm-disk4
 
 # unset environment.
 unset ORACLE_BASE
@@ -1365,27 +1295,28 @@ ora.scan1.vip
 To check the patch installed.
 
 ```console
-[grid@oadb1 OPatch]$ ./opatch lspatches
+grid@oadb1[+ASM1]:/home/grid$ opatch lspatches
+35983839;ACFS Interim patch for 35983839
 35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
 36115038;TOMCAT RELEASE UPDATE 19.0.0.0.0 (36115038)
 35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
-35956421;ACFS RELEASE UPDATE 19.22.0.0.0 (35956421)
 35943157;Database Release Update : 19.22.0.0.240116 (35943157)
 33575402;DBWLM RELEASE UPDATE 19.0.0.0.0 (33575402)
 
 OPatch succeeded.
-[grid@oadb1 OPatch]$ 
+grid@oadb1[+ASM1]:/home/grid$ 
 
 
-[grid@oadb2 OPatch]$ ./opatch lspatches
+grid@oadb2[+ASM2]:/home/grid$ opatch lspatches
+35983839;ACFS Interim patch for 35983839
 35926646;OJVM RELEASE UPDATE: 19.22.0.0.240116 (35926646)
 36115038;TOMCAT RELEASE UPDATE 19.0.0.0.0 (36115038)
 35967489;OCW RELEASE UPDATE 19.22.0.0.0 (35967489)
-35956421;ACFS RELEASE UPDATE 19.22.0.0.0 (35956421)
 35943157;Database Release Update : 19.22.0.0.240116 (35943157)
 33575402;DBWLM RELEASE UPDATE 19.0.0.0.0 (33575402)
 
 OPatch succeeded.
+grid@oadb2[+ASM2]:/home/grid$ 
 
 ```
 
@@ -1410,7 +1341,7 @@ Then start the Oracle installer to perform Installation using 19.22 DB RU+19.22 
 ```console
 $ db_env
 $ cd $ORACLE_HOME
-$ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>,<19.22 OJVM RU unzip location>
+$ ./runInstaller -applyRU <19.22 DBRU Patch 35943157 unzip Location> -applyOneOffs <19.22 OCW RU 35967489 unzip location>,<19.22 OJVM RU unzip location>,<ACFS patch 35983839>
 ```
 ![19c_RAC_install](<./19c_RAC_install_OL9/Screen Shot 2024-03-07 at 09.21.18.png> "Install the Database Software")
 
@@ -1464,6 +1395,79 @@ oracle@oadb2[cdb2]:/home/oracle$ opatch lspatches
 OPatch succeeded.
 ```
 
+Log in as the "grid" user and add the following lines at the end of the "/home/grud/.bash_profile" file.
+```console
+# Oracle Settings
+umask 022
+
+export TMP=/tmp
+export TMPDIR=$TMP
+
+export ORACLE_BASE=/u01/app/oracle
+export GRID_HOME=/u01/app/19.0.0/grid
+export DB_HOME=$ORACLE_BASE/product/19.0.0/db_1
+export ORACLE_HOME=$GRID_HOME
+export ORACLE_SID=+ASM1
+export ORACLE_TERM=xterm
+export BASE_PATH=/usr/sbin:$PATH
+export PATH=.:$ORACLE_HOME/OPatch:$ORACLE_HOME/bin:$BASE_PATH
+
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+#print ' '
+#print '$ORACLE_SID: '$ORACLE_SID
+#print '$ORACLE_HOME: '$ORACLE_HOME
+#print ' '
+
+# Set up the shell variables
+set -o vi
+stty erase ^h
+export PS1=`whoami`@`hostname`\['$ORACLE_SID'\]':$PWD$ '
+
+
+# Alias
+alias oh="cd $ORACLE_HOME"
+```
+
+Log in as the "oracle" user and add the following lines at the end of the "/home/oracle/.bash_profile" file.
+```console
+# Oracle Settings
+umask 022
+
+export TMP=/tmp
+export TMPDIR=$TMP
+
+export ORACLE_BASE=/u01/app/oracle
+export GRID_HOME=/u01/app/19.0.0/grid
+export DB_HOME=$ORACLE_BASE/product/19.0.0/db_1
+export ORACLE_HOME=$DB_HOME
+export ORACLE_SID=rac1
+export ORACLE_PDB_SID=pdb1
+export ORACLE_TERM=xterm
+export BASE_PATH=/usr/sbin:$PATH
+export PATH=.:$ORACLE_HOME/OPatch:$ORACLE_HOME/bin:$BASE_PATH
+
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+
+printf '\n$ORACLE_SID: '$ORACLE_SID
+printf '\n$ORACLE_PDB_SID: '$ORACLE_PDB_SID
+printf '\n$ORACLE_HOME: '$ORACLE_HOME
+printf '\n\n'
+
+# Set up the shell variables
+set -o vi
+stty erase ^h
+export PS1=`whoami`@`hostname`\['$ORACLE_SID'\]':$PWD$ '
+
+
+# Alias
+alias ss="sqlplus / as sysdba"
+alias oh="cd $ORACLE_HOME"
+alias alert='cd /u01/app/oracle/diag/rdbms/rac/rac1/trace'
+```
+
+
 Shutdown both VMs and take snapshots. Remember to make a fresh zip of the ASM disks on the host machine, which you will need to restore if you revert to the post-db snapshots.
 ```console
 $ cd /u04/VirtualBox/ol9-19c-rac
@@ -1473,7 +1477,6 @@ $ zip PostDB.zip *.vdi
 ## Create a Database
 Make sure the "ol9-19c-rac1" and "ol9-19c-rac2" virtual machines are started, then login to "ol9-19c-rac1" as the oracle user and start the Database Creation Asistant (DBCA).
 ```console
-$ db_env
 $ dbca
 ```
 Select the "Create Database" option and click the "Next" button.
@@ -1586,14 +1589,14 @@ ora.scan1.vip
 --------------------------------------------------------------------------------
 grid@oadb1[+ASM1]:/home/grid$
 
-[oracle@ol9-19c-rac1 cdbrac]$ grid_env
-[oracle@ol9-19c-rac1 cdbrac]$ srvctl config database -d cdbrac
-Database unique name: cdbrac
-Database name: cdbrac
+[oracle@ol9-19c-rac1 rac]$ grid_env
+[oracle@ol9-19c-rac1 rac]$ srvctl config database -d rac
+Database unique name: rac
+Database name: rac
 Oracle home: /u01/app/oracle/product/19.0.0/db_1
 Oracle user: oracle
-Spfile: +DATA/CDBRAC/PARAMETERFILE/spfile.275.1024741213
-Password file: +DATA/CDBRAC/PASSWORD/pwdcdbrac.258.1024730137
+Spfile: +DATA/RAC/PARAMETERFILE/spfile.285.1163931523
+Password file: +DATA/RAC/PASSWORD/pwdrac.264.1163928547
 Domain: 
 Start options: open
 Stop options: immediate
@@ -1607,23 +1610,20 @@ Type: RAC
 Start concurrency: 
 Stop concurrency: 
 OSDBA group: dba
-OSOPER group: 
-Database instances: cdbrac1,cdbrac2
-Configured nodes: ol9-19c-rac1,ol9-19c-rac2
+OSOPER group: oper
+Database instances: rac1,rac2
+Configured nodes: oadb1,oadb2
 CSS critical: no
 CPU count: 0
 Memory target: 0
 Maximum memory: 0
 Default network number for database services: 
 Database is administrator managed
-[oracle@ol9-19c-rac1 cdbrac]$ srvctl status database -d cdbrac
-Instance cdbrac1 is running on node ol9-19c-rac1
-Instance cdbrac2 is running on node ol9-19c-rac2
-[oracle@ol9-19c-rac1 cdbrac]$
+[oracle@ol9-19c-rac1 rac]$
 ```
 The V$ACTIVE_INSTANCES view can also display the current status of the instances.
 ```console
-[oracle@ol9-19c-rac1 cdbrac]$ sqlplus / as sysdba
+[oracle@ol9-19c-rac1 rac]$ sqlplus / as sysdba
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Tue Nov 19 10:34:25 2019
 Version 19.22.0.0.0
@@ -1639,10 +1639,10 @@ SQL> SELECT inst_name FROM v$active_instances;
 
 INST_NAME
 --------------------------------------------------------------------------------
-ol9-19c-rac1:cdbrac1
-ol9-19c-rac2:cdbrac2
+oadb1:rac1
+oadb2:rac2
 
-SQL>
+SQL> 
 ```
 
 ## Reference
@@ -1652,4 +1652,3 @@ For more information see:
 - [Oracle Database 12c Release 2 (12.2) RAC On Oracle Linux 7 Using VirtualBox](https://oracle-base.com/articles/12c/oracle-db-12cr2-rac-installation-on-oracle-linux-7-using-virtualbox)
 
 End.
-
