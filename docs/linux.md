@@ -29,3 +29,10 @@ last_modified_date: 2024-3-11 12:26:12 +0800
 [Configuring SSH Tunnels in Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-ssh-tunnels)   
 [在 Oracle Linux 中配置 SSH 隧道](https://docs.oracle.com/zh-cn/learn/oracle-linux-ssh-tunnels)
 
+[Run Oracle Database on Oracle Linux for Arm](https://docs.oracle.com/en/learn/ol-db-arm)   
+[Use DNF to Maintain Security on Oracle Linux](https://docs.oracle.com/en/learn/ol-db-arm)   
+[Get Started with Oracle Linux Automation Manager](https://docs.oracle.com/en/learn/olam-quick-start)   
+[Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl)   
+[Switch from CentOS 7 to Oracle Linux 7](https://docs.oracle.com/en/learn/switch_centos7_ol7)   
+[Switch from CentOS 8 to Oracle Linux 8](https://docs.oracle.com/en/learn/switch_centos8_linux8)   
+[Create users and groups on Oracle Linux](https://docs.oracle.com/en/learn/users_groups_linux8)   
