@@ -8,6 +8,12 @@ last_modified_date: 2024-3-11 12:26:12 +0800
 
 # [Oracle Linux Tutorials](https://docs.oracle.com/en/operating-systems/oracle-linux/tutorials.html)
 
+
+[Oracle Linux Documentation](https://docs.oracle.com/en/operating-systems/oracle-linux/index.html)   
+[Oracle Linux Training](https://oracle-samples.github.io/oltrain/tracks/ol/)   
+[Oracle Linux Training Station](https://oracle-samples.github.io/oltrain/)   
+
+
 [Configure Chrony on Oracle Linux](https://docs.oracle.com/en/learn/ol-chrony/)   
 [在 Oracle Linux 上配置 Chrony](https://docs.oracle.com/zh-cn/learn/ol-chrony)   
 
