@@ -42,3 +42,4 @@ last_modified_date: 2024-3-11 12:26:12 +0800
 [Switch from CentOS 7 to Oracle Linux 7](https://docs.oracle.com/en/learn/switch_centos7_ol7)   
 [Switch from CentOS 8 to Oracle Linux 8](https://docs.oracle.com/en/learn/switch_centos8_linux8)   
 [Create users and groups on Oracle Linux](https://docs.oracle.com/en/learn/users_groups_linux8)   
+[Create Network Bonds using Network Manager CLI](https://docs.oracle.com/en/learn/ol-nmcli-bond)   
