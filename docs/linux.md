@@ -3,7 +3,7 @@ title: Linux Tutorials
 layout: default
 nav_order: 2
 published: true
-last_modified_date: 2024-3-21 12:26:12 +0800
+last_modified_date: 2024-6-6 11:26:12 +0800
 ---
 
 # [Oracle Linux Tutorials](https://docs.oracle.com/en/operating-systems/oracle-linux/tutorials.html)
@@ -67,31 +67,90 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Sign Kernel Modules for Use With UEFI Secure Boot](https://docs.oracle.com/en/learn/sboot-module/)   
 [对内核模块进行签名以用于 UEFI 安全引导](https://docs.oracle.com/zh-cn/learn/sboot-module/)   
 [Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl/)   
-[]()   
-[]()   
-[]()   
-[Configure Chrony on Oracle Linux](https://docs.oracle.com/en/learn/ol-chrony/)   
-[在 Oracle Linux 上配置 Chrony](https://docs.oracle.com/zh-cn/learn/ol-chrony)   
+[在 Oracle Linux 上配置系统设置](https://docs.oracle.com/zh-cn/learn/ol-sysctl/)   
+[Run Control Groups Version 2 on Oracle Linux](https://docs.oracle.com/en/learn/ol-cgroup-v2/)   
+[在 Oracle Linux 上运行控制组版本 2](https://docs.oracle.com/zh-cn/learn/ol-cgroup-v2/)   
 
-[Learn How to Localize Your Installation on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-localization)   
-[了解如何在 Oracle Linux 上本地化安装](https://docs.oracle.com/zh-cn/learn/oracle-linux-localization)   
-
-[Use the Crontab Utility to Schedule Tasks on Oracle Linux](https://docs.oracle.com/en/learn/ol-crontab)   
-[使用 Crontab 实用程序调度 Oracle Linux 上的任务](https://docs.oracle.com/zh-cn/learn/oracle-linux-crontab)
-
-
+## System Administration
 [Create Users and Groups on Oracle Linux](https://docs.oracle.com/en/learn/ol-users-groups)   
 [在 Oracle Linux 上创建用户和组](https://docs.oracle.com/zh-cn/learn/ol-users-groups)
+[Use systemd on Oracle Linux](https://docs.oracle.com/en/learn/use_systemd/)   
+[在 Oracle Linux 上使用 systemd](https://docs.oracle.com/zh-cn/learn/use_systemd/)   
+[Learn How to Localize Your Installation on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-localization/)   
+[了解如何在 Oracle Linux 上本地化安装](https://docs.oracle.com/zh-cn/learn/oracle-linux-localization/)   
+[Use the Crontab Utility to Schedule Tasks on Oracle Linux](https://docs.oracle.com/en/learn/ol-crontab)   
+[使用 Crontab 实用程序调度 Oracle Linux 上的任务](https://docs.oracle.com/zh-cn/learn/oracle-linux-crontab)
+[Configure Chrony on Oracle Linux](https://docs.oracle.com/en/learn/ol-chrony/)   
+[在 Oracle Linux 上配置 Chrony](https://docs.oracle.com/zh-cn/learn/ol-chrony)   
+[Use ReaR to Perform an Oracle Linux Backup](https://docs.oracle.com/en/learn/ol-backup-rear/)   
+[Work with system logging on Oracle Linux](https://docs.oracle.com/en/learn/system_logging_linux8/)   
+[使用 Oracle Linux 上的系统日志记录](https://docs.oracle.com/zh-cn/learn/system_logging_linux8/)   
+[Monitor system resources on Oracle Linux](https://docs.oracle.com/en/learn/ol-monitoring/)   
+[监视 Oracle Linux 上的系统资源](https://docs.oracle.com/zh-cn/learn/ol-monitoring/)   
+[Create a High Availability Cluster For Oracle Linux on Azure](https://docs.oracle.com/en/learn/ol-ha-azure/)   
+[Work With Performance Co-Pilot on Oracle Linux](https://docs.oracle.com/en/learn/ol-pcp/)   
+
+## Security
+[Use SELinux on Oracle Linux](https://docs.oracle.com/en/learn/ol-selinux/)   
+[在 Oracle Linux 上使用 SELinux](https://docs.oracle.com/zh-cn/learn/ol-selinux/)   
+[Audit Oracle Linux with Auditd](https://docs.oracle.com/en/learn/ol-auditd/)   
+[使用 Auditd 审计 Oracle Linux](https://docs.oracle.com/zh-cn/learn/ol-auditd/)   
+[Encrypt Drives using LUKS on Oracle Linux](https://docs.oracle.com/en/learn/ol-luks/)   
+[在 Oracle Linux 上使用 LUKS 加密驱动器](https://docs.oracle.com/zh-cn/learn/ol-luks/)   
+[Use Network Bound Disk Encryption on Oracle Linux](https://docs.oracle.com/en/learn/nbde-oracle-linux/)   
+[在 Oracle Linux 上使用网络边界磁盘加密](https://docs.oracle.com/zh-cn/learn/nbde-oracle-linux/)   
+[Configuring SSH Tunnels in Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-ssh-tunnels)   
+[在 Oracle Linux 中配置 SSH 隧道](https://docs.oracle.com/zh-cn/learn/oracle-linux-ssh-tunnels)
+[Install FreeIPA Server on Oracle Linux](https://docs.oracle.com/en/learn/ol-freeipa/)   
+[在 Oracle Linux 上安装 FreeIPA 服务器](https://docs.oracle.com/zh-cn/learn/ol-freeipa/)   
+
+## Storage and File Systems
+[Work with File Systems on Oracle Linux](https://docs.oracle.com/en/learn/ol-file-systems/)   
+[Use autofs on Oracle Linux](https://docs.oracle.com/en/learn/autofs_linux8/)   
+[在 Oracle Linux 上使用 autofs](https://docs.oracle.com/zh-cn/learn/autofs_linux8/)   
+[Get Started With the Btrfs File System on Oracle Linux](https://docs.oracle.com/en/learn/btrfs-ol8/)   
+[Oracle Linux 上的 Btrfs 文件系统入门](https://docs.oracle.com/zh-cn/learn/btrfs-ol8/)   
+[Use and Enable ACLs on Oracle Linux](https://docs.oracle.com/en/learn/ol-acls/)   
+[在 Oracle Linux 上使用和启用 ACL](https://docs.oracle.com/zh-cn/learn/ol-acls/)   
+[Configure Logical Volumes on Oracle Linux](https://docs.oracle.com/en/learn/ol-lvm/)   
+[在 Oracle Linux 上配置逻辑卷](https://docs.oracle.com/zh-cn/learn/ol-lvm/)   
+[Reduce and Relocate Volume Groups on Oracle Linux](https://docs.oracle.com/en/learn/ol-move-lvm/)   
+[减少并重新定位 Oracle Linux 上的卷组](https://docs.oracle.com/zh-cn/learn/ol-move-lvm/)   
+[Configure RAID Logical Volumes on Oracle Linux](https://docs.oracle.com/en/learn/ol-lvmraid/)   
+[在 Oracle Linux 上配置 RAID 逻辑卷](https://docs.oracle.com/zh-cn/learn/ol-lvmraid/)   
+[Build a Software RAID Array on Oracle Linux](https://docs.oracle.com/en/learn/ol-mdadm/)   
+[在 Oracle Linux 上构建软件 RAID 阵列](https://docs.oracle.com/zh-cn/learn/ol-mdadm/)   
+[Set Up Gluster Storage on Oracle Linux](https://docs.oracle.com/en/learn/gluster-oracle-linux/)   
+[在 Oracle Linux 上设置 Gluster 存储](https://docs.oracle.com/zh-cn/learn/gluster-oracle-linux/)   
+[Create an NFS server on Oracle Linux](https://docs.oracle.com/en/learn/create_nfs_linux/)   
+[在 Oracle Linux 上创建 NFS 服务器](https://docs.oracle.com/zh-cn/learn/create_nfs_linux/)   
+[Create a Highly Available NFS Service with Gluster and Oracle Linux](https://docs.oracle.com/en/learn/ol-ha-nfs/)   
+[使用 Gluster 和 Oracle Linux 创建高可用性的 NFS 服务](https://docs.oracle.com/zh-cn/learn/ol-ha-nfs/)   
+[Use Oracle Cloud Cluster File System Tools on Oracle Cloud Infrastructure](https://docs.oracle.com/en/learn/ocfs2_cluster_linux_8/)   
+[在 Oracle Cloud Infrastructure 上使用 Oracle Cloud Cluster 文件系统工具](https://docs.oracle.com/zh-cn/learn/ocfs2_cluster_linux_8/)   
+[Create an Oracle Linux Storage Appliance in Oracle Cloud Infrastructure](https://docs.oracle.com/en/learn/create-storage-appliance/)   
+[在 Oracle Cloud Infrastructure 中创建 Oracle Linux 存储设备](https://docs.oracle.com/zh-cn/learn/create-storage-appliance/)   
+
+## Networking
 
 [Use NetworkManager and IP Command on Oracle Linux](https://docs.oracle.com/en/learn/ol-nmcli)   
 [在 Oracle Linux 上使用 NetworkManager 和 IP 命令](https://docs.oracle.com/zh-cn/learn/ol-nmcli)
+[Create VLANs on Oracle Linux](https://docs.oracle.com/en/learn/ol-vlans/)   
+[在 Oracle Linux 上创建 VLAN](https://docs.oracle.com/zh-cn/learn/ol-vlans/)   
+[Create Network Bonds using Network Manager CLI](https://docs.oracle.com/en/learn/ol-nmcli-bond)   
+[使用网络管理器 CLI 创建网络绑定](https://docs.oracle.com/zh-cn/learn/ol-nmcli-bond/)   
+[]()   
+[]()   
+[]()   
+[]()   
+[]()   
 
-[Configuring SSH Tunnels in Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-ssh-tunnels)   
-[在 Oracle Linux 中配置 SSH 隧道](https://docs.oracle.com/zh-cn/learn/oracle-linux-ssh-tunnels)
+
+
+
 
 [Use DNF to Maintain Security on Oracle Linux](https://docs.oracle.com/en/learn/ol-db-arm)   
 [Get Started with Oracle Linux Automation Manager](https://docs.oracle.com/en/learn/olam-quick-start)   
 [Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl)   
  
 [Create users and groups on Oracle Linux](https://docs.oracle.com/en/learn/users_groups_linux8)   
-[Create Network Bonds using Network Manager CLI](https://docs.oracle.com/en/learn/ol-nmcli-bond)   
