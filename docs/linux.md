@@ -35,10 +35,32 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [在 Raspberry Pi 设备上安装 Oracle Linux](https://docs.oracle.com/zh-cn/learn/oracle-linux-install-rpi/)   
 [Create USB Installation Media for Oracle Linux with Ventoy](https://docs.oracle.com/en/learn/usb-media-ventoy/)   
 
+# Software Management
+[Use DNF on Oracle Linux](https://docs.oracle.com/en/learn/use_dnf_on_oracle_8)   
+[在 Oracle Linux 上使用 DNF](https://docs.oracle.com/zh-cn/learn/use_dnf_on_oracle_8)   
+[Use DNF to Maintain Security on Oracle Linux](https://docs.oracle.com/en/learn/ol-dnf-security/)   
+[Use a Container to Create a DNF or ULN Repo Mirror](https://docs.oracle.com/en/learn/ol-reposync/)   
+[使用容器创建 DNF 或 ULN 重做镜像](https://docs.oracle.com/zh-cn/learn/ol-reposync/)   
+[Mirror a Yum Repository on Oracle Linux](https://docs.oracle.com/en/learn/ol-yum-mirror/)   
+[Manage AppStream Modules on Oracle Linux](https://docs.oracle.com/en/learn/ol-dnf-modules/)   
+[Managing Oracle Linux Module Streams and Profiles with the OS Management service](https://docs.oracle.com/en/learn/ol-module-streams/)   
 
-  
+# Services
+[Install the Apache Web Server](https://docs.oracle.com/en/learn/apache-install/)   
+[安装 Apache Web Server](https://docs.oracle.com/zh-cn/learn/apache-install/)   
+[Learn to Install and Configure Postfix on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-postfix/)   
+[了解如何在 Oracle Linux 上安装和配置 Postfix](https://docs.oracle.com/zh-cn/learn/oracle-linux-postfix/)   
+[Learn to Install and Configure Postfix With STARTTLS on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-postfix-starttls/)   
+[了解如何在 Oracle Linux 上使用 STARTTLS 安装和配置 Postfix](https://docs.oracle.com/zh-cn/learn/oracle-linux-postfix-starttls/)   
+[Run Oracle Database on Oracle Linux for Arm](https://docs.oracle.com/en/learn/ol-db-arm)   
+[Get Started with Oracle Database Free on Oracle Linux](https://docs.oracle.com/en/learn/ol-db-free/)   
+[Install the NGINX Web Server and Proxy on Oracle Linux](https://docs.oracle.com/en/learn/ol-nginx/)   
 
-
+# Kernel
+[]()   
+[]()   
+[]()   
+[]()   
 [Configure Chrony on Oracle Linux](https://docs.oracle.com/en/learn/ol-chrony/)   
 [在 Oracle Linux 上配置 Chrony](https://docs.oracle.com/zh-cn/learn/ol-chrony)   
 
@@ -48,8 +70,6 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Use the Crontab Utility to Schedule Tasks on Oracle Linux](https://docs.oracle.com/en/learn/ol-crontab)   
 [使用 Crontab 实用程序调度 Oracle Linux 上的任务](https://docs.oracle.com/zh-cn/learn/oracle-linux-crontab)
 
-[Use DNF on Oracle Linux](https://docs.oracle.com/en/learn/use_dnf_on_oracle_8)   
-[在 Oracle Linux 上使用 DNF](https://docs.oracle.com/zh-cn/learn/use_dnf_on_oracle_8)
 
 [Create Users and Groups on Oracle Linux](https://docs.oracle.com/en/learn/ol-users-groups)   
 [在 Oracle Linux 上创建用户和组](https://docs.oracle.com/zh-cn/learn/ol-users-groups)
@@ -60,7 +80,6 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Configuring SSH Tunnels in Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-ssh-tunnels)   
 [在 Oracle Linux 中配置 SSH 隧道](https://docs.oracle.com/zh-cn/learn/oracle-linux-ssh-tunnels)
 
-[Run Oracle Database on Oracle Linux for Arm](https://docs.oracle.com/en/learn/ol-db-arm)   
 [Use DNF to Maintain Security on Oracle Linux](https://docs.oracle.com/en/learn/ol-db-arm)   
 [Get Started with Oracle Linux Automation Manager](https://docs.oracle.com/en/learn/olam-quick-start)   
 [Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl)   
