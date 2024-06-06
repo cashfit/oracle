@@ -57,7 +57,16 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Install the NGINX Web Server and Proxy on Oracle Linux](https://docs.oracle.com/en/learn/ol-nginx/)   
 
 # Kernel
-[]()   
+[Manage the Boot Kernel for Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-kernels/)   
+[管理 Oracle Linux 的引导内核](https://docs.oracle.com/zh-cn/learn/oracle-linux-kernels/)   
+[Remove the Red Hat Compatible Kernel With the kernel-transition Package](https://docs.oracle.com/en/learn/ol-kerntran/)   
+[使用内核转换软件包删除 Red Hat 兼容内核](https://docs.oracle.com/zh-cn/learn/ol-kerntran/)   
+[Use Ksplice on Oracle Linux](https://docs.oracle.com/en/learn/ol-ksplice/)   
+[Enable Ksplice in Oracle Linux](https://docs.oracle.com/en/learn/ol-ksplice-enable/)   
+[Disable a Kernel Module on Oracle Linux](https://docs.oracle.com/en/learn/ol-kernel-module-disable/)   
+[Sign Kernel Modules for Use With UEFI Secure Boot](https://docs.oracle.com/en/learn/sboot-module/)   
+[对内核模块进行签名以用于 UEFI 安全引导](https://docs.oracle.com/zh-cn/learn/sboot-module/)   
+[Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl/)   
 []()   
 []()   
 []()   
