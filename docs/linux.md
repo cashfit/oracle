@@ -13,7 +13,16 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Oracle Linux Training](https://oracle-samples.github.io/oltrain/tracks/ol/)   
 [Oracle Linux Training Station](https://oracle-samples.github.io/oltrain/)   
 
-- Install and Upgrade   
+# General
+[Get Started with Git on Oracle Linux](https://docs.oracle.com/en/learn/ol-git-start/)   
+[Install Oracle Java SE on Oracle Linux](https://docs.oracle.com/en/learn/ol-java-install/)   
+[Introduction to Oracle Linux: Shell and Command Line](https://docs.oracle.com/en/learn/shell-commands-intro-to-oracle-linux/)   
+[Oracle Linux 简介：Shell 和命令行](https://docs.oracle.com/zh-cn/learn/shell-commands-intro-to-oracle-linux/)   
+[Learn to Use the tmux Terminal Multiplexer on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-tmux/)   
+[了解如何在 Oracle Linux 上使用 tmux Terminal Multiplexer](https://docs.oracle.com/zh-cn/learn/oracle-linux-tmux/)   
+[Install the VNC Remote Access Server on Oracle Linux](https://docs.oracle.com/en/learn/ol-install-vnc/)    
+
+# Install and Upgrade
 [Create USB Installation Media for Oracle Linux with Fedora Media Writer](https://docs.oracle.com/en/learn/usb-media/)   
 [使用 Fedora Media Writer 为 Oracle Linux 创建 USB 安装介质](https://docs.oracle.com/zh-cn/learn/usb-media/)   
 [Upgrade Oracle Linux with Leapp](https://docs.oracle.com/en/learn/ol-linux-leapp/)   
@@ -27,13 +36,7 @@ last_modified_date: 2024-3-21 12:26:12 +0800
 [Create USB Installation Media for Oracle Linux with Ventoy](https://docs.oracle.com/en/learn/usb-media-ventoy/)   
 
 
-[]()   
-[]()   
-[]()   
-[]()   
-[]()   
-[]()   
-[]()   
+  
 
 
 [Configure Chrony on Oracle Linux](https://docs.oracle.com/en/learn/ol-chrony/)   
