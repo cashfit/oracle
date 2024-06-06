@@ -132,25 +132,39 @@ last_modified_date: 2024-6-6 11:26:12 +0800
 [在 Oracle Cloud Infrastructure 中创建 Oracle Linux 存储设备](https://docs.oracle.com/zh-cn/learn/create-storage-appliance/)   
 
 ## Networking
-
 [Use NetworkManager and IP Command on Oracle Linux](https://docs.oracle.com/en/learn/ol-nmcli)   
 [在 Oracle Linux 上使用 NetworkManager 和 IP 命令](https://docs.oracle.com/zh-cn/learn/ol-nmcli)
 [Create VLANs on Oracle Linux](https://docs.oracle.com/en/learn/ol-vlans/)   
 [在 Oracle Linux 上创建 VLAN](https://docs.oracle.com/zh-cn/learn/ol-vlans/)   
 [Create Network Bonds using Network Manager CLI](https://docs.oracle.com/en/learn/ol-nmcli-bond)   
 [使用网络管理器 CLI 创建网络绑定](https://docs.oracle.com/zh-cn/learn/ol-nmcli-bond/)   
-[]()   
-[]()   
-[]()   
-[]()   
-[]()   
 
+## Virtualization and Containers
+[Create VMs with KVM on Oracle Linux](https://docs.oracle.com/en/learn/ol-kvm/)   
+[在 Oracle Linux 上使用 KVM 创建 VM](https://docs.oracle.com/zh-cn/learn/ol-kvm/)   
+[Get started with Podman](https://docs.oracle.com/en/learn/intro_podman/)   
+[开始使用 Podman](https://docs.oracle.com/zh-cn/learn/intro_podman/)   
+[Run Containers with Podman on Oracle Linux](https://docs.oracle.com/en/learn/run-containers-podman/)   
+[Mount an NFS Share Using a Rootful Podman Volume](https://docs.oracle.com/en/learn/podman-volume-nfs/)   
+[Use Compose Files with Podman](https://docs.oracle.com/en/learn/podman-compose/)   
+[使用 Podman 编写文件](https://docs.oracle.com/zh-cn/learn/podman-compose/)   
+[Building multi-platform container images using Podman on Oracle Linux](https://docs.oracle.com/en/learn/oracle-linux-platform-images/)   
+[在 Oracle Linux 上使用 Podman 构建多平台容器映像](https://docs.oracle.com/zh-cn/learn/oracle-linux-platform-images/)   
+[Install kind Using Rootless Podman on Oracle Linux](https://docs.oracle.com/en/learn/podman-kind/)   
+[Deploy HAProxy using Podman](https://docs.oracle.com/en/learn/podman-haproxy/)   
+[Deploy a High Availability Project Quay using Podman](https://docs.oracle.com/en/learn/podman-ha-quay/)   
+[Learn to Install Project Quay on Podman](https://docs.oracle.com/en/learn/podman-quay/)   
+[了解如何在 Podman 上安装项目查询](https://docs.oracle.com/zh-cn/learn/podman-quay/)   
+[Install Podman Desktop](https://docs.oracle.com/en/learn/podman-desktop/)   
+[安装 Podman 桌面](https://docs.oracle.com/zh-cn/learn/podman-desktop/)   
+[Deploy Keycloak Using Podman](https://docs.oracle.com/en/learn/podman-keycloak/)   
+[https://docs.oracle.com/en/learn/podman-keycloak/](https://docs.oracle.com/zh-cn/learn/podman-keycloak/)   
+[Run Kubernetes on Oracle Linux](https://docs.oracle.com/en/learn/ol-kube/)   
+[在 Oracle Linux 上运行 Kubernetes](https://docs.oracle.com/zh-cn/learn/ol-kube/)   
+[Install Minikube on Oracle Linux](https://docs.oracle.com/en/learn/ol-minikube/)   
+[在 Oracle Linux 上安装 Minikube](https://docs.oracle.com/zh-cn/learn/ol-minikube/)   
+[ Use Storage with Podman Containers](https://docs.oracle.com/en/learn/ol-podman-storage/)   
 
-
-
-
-[Use DNF to Maintain Security on Oracle Linux](https://docs.oracle.com/en/learn/ol-db-arm)   
+## Oracle Linux Automation Manager
 [Get Started with Oracle Linux Automation Manager](https://docs.oracle.com/en/learn/olam-quick-start)   
-[Configure System Settings on Oracle Linux](https://docs.oracle.com/en/learn/ol-sysctl)   
- 
-[Create users and groups on Oracle Linux](https://docs.oracle.com/en/learn/users_groups_linux8)   
+
