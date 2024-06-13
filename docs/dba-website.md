@@ -3,7 +3,7 @@ title: DBA website
 layout: default
 nav_order: 3
 published: true
-last_modified_date: 2024-2-18 +0800
+last_modified_date: 2024-6-13 +0800
 ---
 
 # DBA website
@@ -46,7 +46,6 @@ last_modified_date: 2024-2-18 +0800
 | <https://www.mikedietrichde.com>{:target="_blank"}                                           | Upgrade your Database - NOW!  |
 | <https://www.oracle-base.com>{:target="_blank"}                                    | oracle-base by Tim Hall |
 | <https://blog.tanelpoder.com>{:target="_blank"}                                        | TANEL PODER            |
-| <http://structureddata.org>{:target="_blank"}                                          | Structured Data by Greg Rahn  |
 | <http://www.morganslibrary.org/library.html>{:target="_blank"}                         | oradebug |
 | <http://tech.e2sn.com/oracle/troubleshooting/oradebug-doc>{:target="_blank"}           | oradebug   |
 | <http://www.orafaq.com/>{:target="_blank"}                                             | Oracle FAQ  |
