@@ -47,6 +47,6 @@ last_modified_date: 2024-6-13 +0800
 | <https://www.oracle-base.com>{:target="_blank"}                                    | oracle-base by Tim Hall |
 | <https://blog.tanelpoder.com>{:target="_blank"}                                        | TANEL PODER            |
 | <http://www.morganslibrary.org/library.html>{:target="_blank"}                         | oradebug |
-| <http://tech.e2sn.com/oracle/troubleshooting/oradebug-doc>{:target="_blank"}           | oradebug   |
+| <https://tech.e2sn.com/oracle-living-books/oracle-troubleshooting/oradebug-doc>{:target="_blank"}           | oradebug   |
 | <http://www.orafaq.com/>{:target="_blank"}                                             | Oracle FAQ  |
 
