@@ -1,12 +1,12 @@
 ---
-title: DBA website
+title: DBA Website
 layout: default
 nav_order: 3
 published: true
 last_modified_date: 2024-6-13 +0800
 ---
 
-# DBA website
+# DBA Website
 
 ## Offical Blogs
 
