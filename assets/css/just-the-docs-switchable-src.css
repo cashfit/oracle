@@ -1284,6 +1284,7 @@ body {
   height: 100%;
   overflow-x: auto;
   font-size: 11px !important;
+  background-color: #FFFFFF;
 }
 @media (min-width: 31.25rem) {
   .aux-nav {
