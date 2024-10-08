@@ -9377,6 +9377,7 @@ html.dark-mode .aux-nav {
 	height: 100%;
 	overflow-x: auto;
 	font-size: 11px !important;
+	background-color: #27262b;
 }
 
 @media (min-width: 31.25rem) {
@@ -9772,6 +9773,7 @@ html.dark-mode .search {
 	height: 4rem;
 	padding: 0.5rem;
 	transition: padding linear 200ms;
+	background-color: #27262b;
 }
 
 @media (min-width: 50rem) {
