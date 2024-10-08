@@ -1289,6 +1289,7 @@ body {
 @media (min-width: 31.25rem) {
   .aux-nav {
     font-size: 12px !important;
+    background-color: #FFFFFF;
   }
 }
 .aux-nav .aux-nav-list {
@@ -1307,7 +1308,6 @@ body {
 @media (min-width: 50rem) {
   .aux-nav {
     padding-right: 1rem;
-    background-color: #27262b;
   }
 }
 
@@ -9384,6 +9384,7 @@ html.dark-mode .aux-nav {
 @media (min-width: 31.25rem) {
 	html.dark-mode .aux-nav {
 		font-size: 12px !important;
+		background-color: #27262b;
 	}
 }
 
