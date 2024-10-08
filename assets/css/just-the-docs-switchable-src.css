@@ -1308,6 +1308,7 @@ body {
 @media (min-width: 50rem) {
   .aux-nav {
     padding-right: 1rem;
+    background-color: #FFFFFF;
   }
 }
 
@@ -9406,6 +9407,7 @@ html.dark-mode .aux-nav .aux-nav-list-item {
 @media (min-width: 50rem) {
 	html.dark-mode .aux-nav {
 		padding-right: 1rem;
+		background-color: #27262b;
 	}
 }
 
