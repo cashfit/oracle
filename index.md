@@ -5,7 +5,7 @@ nav_order: 1
 description: "Oracle database related articles and posts."
 permalink: /
 published: true
-last_modified_date: 2024-2-29 08:26:12 +0800
+last_modified_date: 2025-8-6 09:26:12 +0800
 ---
 
 ![Data](</oracle/assets/images/Data analysis-pana.svg> "Hero")
