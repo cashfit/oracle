@@ -14,7 +14,7 @@ Oracle database and Linux related articles and posts.
 
 ## [Software release and support status](https://endoflife.date/){:target="_blank"}
 
-Programming           | [Java](https://endoflife.date/java){:target="_blank"} | [Python](https://endoflife.date/python){:target="_blank"} | [Ruby](https://endoflife.date/ruby){:target="_blank"} 
+Programming           | [Oracle JDK](https://endoflife.date/oracle-jdk){:target="_blank"} | [Python](https://endoflife.date/python){:target="_blank"} | [Ruby](https://endoflife.date/ruby){:target="_blank"} 
 Database              | [MySQL](https://endoflife.date/mysql){:target="_blank"} | [Redis](https://endoflife.date/redis){:target="_blank"} | [Valkey](https://endoflife.date/valkey){:target="_blank"} 
 Operating System      | [Windows](https://endoflife.date/windows){:target="_blank"} | [MacOS](https://endoflife.date/macos){:target="_blank"} | [RHEL](https://endoflife.date/rhel){:target="_blank"} 
 Framework             | [React](https://endoflife.date/react){:target="_blank"} | [Next.js](https://endoflife.date/nextjs){:target="_blank"} | [Vue](https://endoflife.date/vue){:target="_blank"}
