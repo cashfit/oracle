@@ -8,7 +8,7 @@ last_modified_date: 2024-5-4 11:09:12 +0800
 
 # [Oracle Database Documentation](https://docs.oracle.com/en/database/oracle/oracle-database/index.html){:target="_blank"}  
 [Oracle Error Messages](https://docs.oracle.com/en/error-help/db/){:target="_blank"}    
-[Oracle Database, 23ai](https://docs.oracle.com/en/database/oracle/oracle-database/23/index.html){:target="_blank"}    
+[Oracle Database, 26ai](https://docs.oracle.com/en/database/oracle/oracle-database/26/index.html){:target="_blank"}    
 [Oracle Database, 21c](https://docs.oracle.com/en/database/oracle/oracle-database/21/index.html){:target="_blank"}   
 [Oracle Database, 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/index.html){:target="_blank"}   
 [Oracle Database, 18c](https://docs.oracle.com/en/database/oracle/oracle-database/18/index.html){:target="_blank"}   
