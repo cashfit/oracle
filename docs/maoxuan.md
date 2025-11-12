@@ -1,7 +1,7 @@
 ---
 title: 毛选金句摘录
 layout: default
-nav_order: 8
+nav_order: 15
 published: true
 last_modified_date: 2025-11-12 15:03:12 +0800
 ---
